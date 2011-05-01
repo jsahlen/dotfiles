@@ -1,0 +1,4 @@
+#compdef git-add
+#autoload
+
+_files
