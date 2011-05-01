@@ -39,9 +39,9 @@ else
   source "$ZSH/themes/$ZSH_THEME.zsh-theme"
 fi
 
-# Compile zcompdump if necessary
-if [ ~/.zcompdump -nt ~/.zcompdump.zwc ]; then
-  zcompile ~/.zcompdump
+# Compile zcompdump, if modified, to increase startup speed.
+if [ "$HOME/.zcompdump" -nt "$HOME/.zcompdump.zwc" ]; then
+    zcompile "$HOME/.zcompdump"
 fi
 
 # Check for updates on initial load...
