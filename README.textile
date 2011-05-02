@@ -1,10 +1,10 @@
-h2. My branch
-
-This is bitboxers branch of oh-my-zsh. I added a few plugins and my theme.
-
 A handful of functions, auto-complete helpers, and stuff that makes you shout...
 
 bq. "OH MY ZSHELL!"
+
+h2. My branch
+
+This is bitboxers branch of oh-my-zsh. I added a few plugins (e.g. rvm+bundler completion, screen, gem-open) and my theme.
 
 h2. Setup
 
