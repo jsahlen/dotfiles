@@ -5,6 +5,15 @@
 #       VERSION:  1.0.1
 # ------------------------------------------------------------------------------
 
+alias showfiles='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
+alias hidefiles='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+
+# Recursively delete .DS_Store files
+alias rm-dsstore="find . -name '*.DS_Store' -type f -delete"
+
+function savepath() {
+  pwd > ~/.current_path~
+}
 
 function tab() {
   local command="cd \\\"$PWD\\\""
