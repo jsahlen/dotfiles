@@ -1,3 +1,6 @@
+# This plugin is based on https://github.com/gma/bundler-exec
+# modify the BUNDLED_COMMANDS if needed
+
 BUNDLED_COMMANDS=(cucumber heroku rackup rails rake rspec ruby shotgun spec spork)
 
 ## Functions
