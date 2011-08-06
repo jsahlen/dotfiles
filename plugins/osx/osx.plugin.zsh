@@ -8,13 +8,6 @@
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
-# Recursively delete .DS_Store files
-alias rm-dsstore="find . -name '*.DS_Store' -type f -delete"
-
-function savepath() {
-  pwd > ~/.current_path~
-}
-
 function tab() {
   local command="cd \\\"$PWD\\\""
   (( $# > 0 )) && command="${command}; $*"
@@ -53,7 +46,7 @@ EOF
 }
 
 function pfd() {
-  osascript 2>/dev/null <<EOF 
+  osascript 2>/dev/null <<EOF
     tell application "Finder"
       return POSIX path of (target of window 1 as alias)
     end tell
@@ -61,7 +54,7 @@ EOF
 }
 
 function pfs() {
-  osascript 2>/dev/null <<EOF 
+  osascript 2>/dev/null <<EOF
     set output to ""
     tell application "Finder" to set the_selection to selection
     set item_count to count the_selection
