@@ -61,7 +61,11 @@ function pfs() {
     repeat with item_index from 1 to count the_selection
       if item_index is less than item_count then set the_delimiter to "\n"
       if item_index is item_count then set the_delimiter to ""
+<<<<<<< HEAD
       set output to output & ((item item_index of the_selection as alias)'s POSIX path) & the_delimiter 
+=======
+      set output to output & ((item item_index of the_selection as alias)'s POSIX path) & the_delimiter
+>>>>>>> 9da94481e9e0a36e16dbf3640e826e0056f0a221
     end repeat
 EOF
 }
