@@ -3,6 +3,7 @@
 # Heroku Autocomplete plugin for Oh-My-Zsh
 # Requires: The Heroku client gem (https://github.com/heroku/heroku)
 # Author: Ali B. (http://awhitebox.com)
+alias heroku="nocorrect heroku"
 
 local -a _1st_arguments
 _1st_arguments=(
