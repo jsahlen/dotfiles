@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+home = File.expand_path('~')
+
+Dir['*'].each do |file|
+  next if file =~ /bootstrap|README/
+  target = File.join(home, ".#{file}")
+
+  if File.symlink? target
+    next
+  elsif File.exist? target
+    puts "Skipped #{file} (target already exists)"
+    next
+  end
+
+  `ln -s #{File.expand_path file} #{target}`
+  puts "Linked ~/.#{file} -> #{file}"
+end
+
+
+# Prepare Vundle
+
+unless File.directory? "vim/bundle/vundle"
+  puts "Cloning gmarik/vundle"
+  `git clone git://github.com/gmarik/vundle.git vim/bundle/vundle`
+end

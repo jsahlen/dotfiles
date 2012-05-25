@@ -1,0 +1,37 @@
+#!/usr/bin/ruby
+
+require 'fileutils'
+
+MRLS_VERSION = "0.1"
+
+unless ARGV[0] && ARGV[1]
+  script = File.basename($0)
+  puts "Move Release v#{MRLS_VERSION}"
+  puts "usage:	#{script} source target"
+  puts ""
+  exit
+end
+
+unrar = '/usr/bin/unrar'
+
+source_path = File.expand_path(ARGV[0])
+release_name = source_path.sub(/^.*\/([^\/]+)\/[^\/]+$/, '\1')
+target_path  = File.expand_path(ARGV[1])
+
+filename = File.basename(source_path)
+ext      = filename.sub(/^.*\.([^\.]+)$/, '\1')
+
+target_filename = "#{release_name}.#{ext}"
+
+unless File.file? source_path
+  puts "Error! File not found", ""
+  exit
+end
+
+if File.directory? target_path
+  puts "Moving #{filename} as #{target_filename}"
+  FileUtils.mv source_path, File.join(target_path, target_filename)
+else
+  FileUtils.mv source_path, target_path
+end
+

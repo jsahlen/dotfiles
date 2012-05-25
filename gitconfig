@@ -1,0 +1,29 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow reverse
+	frag = black reverse
+	plain = black
+	old = red
+	new = green
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
+[user]
+	name = Johan Sahlén
+	email = johan.sahlen@gmail.com
+[alias]
+	co = checkout
+	branches = branch
+	log = log --date=local
+	wtf = !git-wtf
+[core]
+	excludesfile = ~/.gitignore
+	quotepath = false
