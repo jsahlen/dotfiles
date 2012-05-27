@@ -51,7 +51,7 @@ for plugin ($plugins); do
 done
 
 # Load all of your custom configurations from custom/
-for config_file ($ZSH_CUSTOM/*.zsh) source $config_file
+for config_file ($ZSH_CUSTOM/*.zsh(.N)) source $config_file
 
 # Load the theme
 if [ "$ZSH_THEME" = "random" ]
@@ -65,24 +65,11 @@ then
 else
   if [ ! "$ZSH_THEME" = ""  ]
   then
-    if [ -f "$ZSH/custom/$ZSH_THEME.zsh-theme" ]
+    if [ -f "$ZSH_CUSTOM/$ZSH_THEME.zsh-theme" ]
     then
-      source "$ZSH/custom/$ZSH_THEME.zsh-theme"
+      source "$ZSH_CUSTOM/$ZSH_THEME.zsh-theme"
     else
       source "$ZSH/themes/$ZSH_THEME.zsh-theme"
     fi
   fi
-fi
-
-# Compile zcompdump, if modified, to increase startup speed.
-if [ "$HOME/.zcompdump" -nt "$HOME/.zcompdump.zwc" ]; then
-    zcompile "$HOME/.zcompdump"
-fi
-
-# Check for updates on initial load...
-if [ "$DISABLE_AUTO_UPDATE" = "true" ]
-then
-  return
-else
-  /usr/bin/env zsh $ZSH/tools/check_for_upgrade.sh
 fi
