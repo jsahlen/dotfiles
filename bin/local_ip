@@ -13,4 +13,4 @@ ensure
   Socket.do_not_reverse_lookup = orig
 end
 
-puts local_ip
+print local_ip
