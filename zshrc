@@ -35,7 +35,7 @@ export ZSH_THEME="jsahlen"
 source $ZSH/oh-my-zsh.sh
 
 # $PATH
-export PATH=$HOME/.bin:/usr/local/bin:/usr/local/share/python:$PATH
+export PATH=$HOME/.rbenv/shims:$HOME/.bin:/usr/local/bin:/usr/local/share/python:$PATH
 
 # mkdir, cd into it
 mkcd () {
