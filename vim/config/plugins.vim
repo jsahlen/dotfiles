@@ -34,6 +34,7 @@ Bundle 'wincent/Command-T'
 " Vim.org bundles
 Bundle 'IndexedSearch'
 Bundle 'L9'
+Bundle 'matchit.zip'
 
 
 " NERDTree
