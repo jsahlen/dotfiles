@@ -11,6 +11,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -33,7 +34,6 @@ Bundle 'wincent/Command-T'
 " Vim.org bundles
 Bundle 'IndexedSearch'
 Bundle 'L9'
-Bundle 'YankRing.vim'
 
 
 " NERDTree
@@ -63,3 +63,8 @@ set wildignore=.git,tmp,*.png,*.jpg,*.gif,*.psd
 " Hammer
 let g:HammerQuiet=1
 let g:HammerTemplate="jsahlen"
+
+
+" yankstack
+let g:yankstack_map_keys = 0
+nmap <C-p> <Plug>yankstack_substitute_older_paste
