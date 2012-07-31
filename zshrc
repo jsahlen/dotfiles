@@ -1,6 +1,9 @@
 # Make sure UTF-8 works (especially on Lion)
 export LC_ALL=en_US.UTF-8
 
+# $PATH
+export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -34,9 +37,6 @@ export ZSH_THEME="jsahlen"
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# $PATH
-export PATH=$HOME/.rbenv/shims:$HOME/.bin:/usr/local/bin:/usr/local/share/python:$PATH
-
 # mkdir, cd into it
 mkcd () {
   mkdir -p "$*"
@@ -57,9 +57,6 @@ alias sudo='sudo '
 
 # Always use colors with `tree`
 hash tree &>/dev/null && alias tree='tree -C'
-
-# Load rbenv
-hash rbenv &>/dev/null && eval "$(rbenv init -)"
 
 # Alias to go to download dir
 alias cdd="cd /Volumes/Media/Downloads"
