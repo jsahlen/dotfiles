@@ -1,5 +1,4 @@
 #compdef tmuxinator
-compdef mux=tmuxinator
 #autoload
 # ------------------------------------------------------------------------------
 # Description
