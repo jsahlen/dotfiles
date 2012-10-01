@@ -38,7 +38,6 @@ set smarttab                     " Be smart about inserting spaces when hitting 
 set autoindent                   " Automatically set the indent of a new line based on the previous one
 
 " Searching
-set gdefault                     " Global search by default
 set hlsearch                     " Highlight results
 set incsearch                    " Search-as-you-type
 set ignorecase                   " Ignore case…
