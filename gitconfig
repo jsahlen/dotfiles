@@ -18,7 +18,7 @@
 	untracked = cyan
 [user]
 	name = Johan Sahlén
-	email = johan.sahlen@gmail.com
+	email = johan@monospace.se
 [alias]
 	co = checkout
 	branches = branch

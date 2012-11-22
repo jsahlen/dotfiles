@@ -29,6 +29,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'triglav/vim-visual-increment'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wincent/Command-T'
 " Vim.org bundles
@@ -59,7 +60,7 @@ nmap <silent> <leader>T :CommandTFlush<CR>:CommandT<CR>
 let g:CommandTAcceptSelectionTabMap=['<C-t>','<S-CR>']
 let g:CommandTCancelMap=['<ESC>', '<C-c>']
 let g:CommandTMatchWindowAtTop=1
-set wildignore=.git,tmp,*.png,*.jpg,*.gif,*.psd
+set wildignore=.git,tmp,*.png,*.jpg,*.gif,*.psd,node_modules/*
 
 " Hammer
 let g:HammerQuiet=1
