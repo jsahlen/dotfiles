@@ -29,6 +29,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'triglav/vim-visual-increment'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wincent/Command-T'
 " Vim.org bundles
