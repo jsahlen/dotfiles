@@ -4,7 +4,6 @@ Bundle 'jsahlen/vim-snipmate-snippets'
 Bundle 'jsahlen/vim-tomorrow-theme'
 " GitHub bundles
 Bundle 'bbommarito/vim-slim'
-Bundle 'editorconfig/editorconfig-vim'
 Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 Bundle 'godlygeek/tabular'
