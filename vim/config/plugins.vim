@@ -98,8 +98,8 @@ function! CtrlP_Statusline_2(str)
 endfunction
 
 let g:ctrlp_map = '<leader>t'
-let g:ctrlp_cmd = 'CtrlPMixed'
-nmap <silent> <leader>T :CtrlPClearCache<CR>:CtrlPMixed<CR>
+let g:ctrlp_cmd = 'CtrlP'
+nmap <silent> <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
 let g:ctrlp_status_func = {
   \ 'main': 'CtrlP_Statusline_1',
