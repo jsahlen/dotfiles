@@ -9,6 +9,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'mileszs/ack.vim'
@@ -31,7 +32,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'triglav/vim-visual-increment'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'wincent/Command-T'
 " Vim.org bundles
 Bundle 'IndexedSearch'
 Bundle 'L9'
@@ -54,13 +54,64 @@ let g:syntastic_jsl_conf="~/.jsl.conf"
 let g:syntastic_disabled_filetypes=['html']
 
 
-" CommandT
-nmap <silent> <leader>t :CommandT<CR>
-nmap <silent> <leader>T :CommandTFlush<CR>:CommandT<CR>
-let g:CommandTAcceptSelectionTabMap=['<C-t>','<S-CR>']
-let g:CommandTCancelMap=['<ESC>', '<C-c>']
-let g:CommandTMatchWindowAtTop=1
-set wildignore=.git,tmp,*.png,*.jpg,*.gif,*.psd,node_modules/*
+" CtrlP
+
+function! CtrlP_Statusline_1(focus, byfname, regex, prev, item, next, marked)
+  " Arguments:
+  " |
+  " +- a:focus   : The focus of the prompt: "prt" or "win".
+  " |
+  " +- a:byfname : In filename mode or in full path mode: "file" or "path".
+  " |
+  " +- a:regex   : In regex mode: 1 or 0.
+  " |
+  " +- a:prev    : The previous search mode.
+  " |
+  " +- a:item    : The current search mode.
+  " |
+  " +- a:next    : The next search mode.
+  " |
+  " +- a:marked  : The number of marked files, or a comma separated list of
+  "                the marked filenames.
+
+  let a:statusline  = '[CtrlP] '
+  let a:statusline .= 'mode:' . substitute(a:item, ' ', '', 'g') . ' '
+  let a:statusline .= 'by:' . a:byfname . ' '
+  let a:statusline .= 'regex:' . (a:regex ? 'on' : 'off') . ' '
+  let a:statusline .= 'files:' . a:marked
+  let a:statusline .= '%='
+  let a:statusline .= ' [' . getcwd() . ']'
+
+  return a:statusline
+endfunction
+
+function! CtrlP_Statusline_2(str)
+  " a:str : Either the number of files scanned so far, or a string indicating
+  "         the current directory is being scanned with a user_command.
+
+  let a:statusline  = '[CtrlP] '
+  let a:statusline .= '%2*' . a:str . '%*'
+  let a:statusline .= '%='
+  let a:statusline .= ' [' . getcwd() . ']'
+
+  return a:statusline
+endfunction
+
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlPMixed'
+nmap <silent> <leader>T :CtrlPClearCache<CR>:CtrlPMixed<CR>
+
+let g:ctrlp_status_func = {
+  \ 'main': 'CtrlP_Statusline_1',
+  \ 'prog': 'CtrlP_Statusline_2'
+\ }
+
+let g:ctrlp_root_markers = ['Gemfile']
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules)$',
+  \ 'file': '\v\.(png|jpg|gif|psd)$'
+\ }
 
 " Hammer
 let g:HammerQuiet=1
