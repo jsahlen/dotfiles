@@ -2,7 +2,7 @@
 export LC_ALL=en_US.UTF-8
 
 # $PATH
-export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/share/npm/bin:$PATH
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
@@ -60,3 +60,6 @@ hash tree &>/dev/null && alias tree='tree -C'
 
 # Alias to go to download dir
 alias cdd="cd /Volumes/Media/Downloads"
+
+# Alias for todotxt
+alias t="todotxt"
