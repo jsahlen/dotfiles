@@ -1,5 +1,4 @@
 " My own bundles
-Bundle 'jsahlen/hammer.vim'
 Bundle 'jsahlen/vim-snipmate-snippets'
 Bundle 'jsahlen/vim-tomorrow-theme'
 " GitHub bundles
