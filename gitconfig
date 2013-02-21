@@ -30,3 +30,5 @@
 	quotepath = false
 [push]
 	default = simple
+[github]
+	user = jsahlen
