@@ -28,7 +28,5 @@
 [core]
 	excludesfile = ~/.gitignore
 	quotepath = false
-[push]
-	default = simple
 [github]
 	user = jsahlen
