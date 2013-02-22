@@ -1,9 +1,6 @@
 # Make sure UTF-8 works (especially on Lion)
 export LC_ALL=en_US.UTF-8
 
-# $PATH
-export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/share/npm/bin:$PATH
-
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
