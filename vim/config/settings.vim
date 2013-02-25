@@ -17,6 +17,7 @@ set wildmode=list:longest,list:full " Show the completion menu
 set showcmd                      " Show partial command in the last line of the screen
 set laststatus=2                 " Always show the statusline
 set equalalways                  " Multiple windows, when created, are equal in size
+set ttyfast                      " Indicate a fast terminal connection
 
 " Scrollbars
 set scrolloff=3                  " Minimal number of lines to show above/below the cursor
