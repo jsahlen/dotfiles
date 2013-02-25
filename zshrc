@@ -23,7 +23,7 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="false"
 
 # oh-my-zsh plugins
-plugins=(bundler gem git git-flow gnu-utils npm rbenv server history-substring-search)
+plugins=(bundler gem git gnu-utils npm rake rbenv server history-substring-search)
 
 # Mac-specific oh-my-zsh plugins
 [[ `uname` == "Darwin" ]] && plugins+=(brew lioncwd osx)
