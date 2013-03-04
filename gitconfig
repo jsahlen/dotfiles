@@ -28,5 +28,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	autocrlf = input
+[push]
+	default = current
 [github]
 	user = jsahlen
