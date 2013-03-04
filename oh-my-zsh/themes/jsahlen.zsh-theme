@@ -10,7 +10,7 @@ PROMPT='%{$PROMPTCOLOR%}%p%~ ➜ %{$reset_color%}'
 
 RPROMPT='$(git_prompt_info)'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[grey]%}∓ "
+ZSH_THEME_GIT_PROMPT_PREFIX="%{\e[38;5;8m%}∓ "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} ✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{\e[38;5;9m%} ✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" ✔"
