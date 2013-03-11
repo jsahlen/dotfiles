@@ -2,7 +2,7 @@
 #          FILE:  osx.plugin.zsh
 #   DESCRIPTION:  oh-my-zsh plugin file.
 #        AUTHOR:  Sorin Ionescu (sorin.ionescu@gmail.com)
-#       VERSION:  1.0.1
+#       VERSION:  1.1.0
 # ------------------------------------------------------------------------------
 
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
@@ -37,9 +37,67 @@ EOF
           launch session "Default Session"
           set current_session to current session
           tell current_session
-            write text "${command}"
+            write text "${command}; clear;"
           end tell
         end tell
+      end tell
+EOF
+  }
+}
+
+function vsplit_tab() {
+  local command="cd \\\"$PWD\\\""
+  (( $# > 0 )) && command="${command}; $*"
+
+  the_app=$(
+    osascript 2>/dev/null <<EOF
+      tell application "System Events"
+        name of first item of (every process whose frontmost is true)
+      end tell
+EOF
+  )
+
+  [[ "$the_app" == 'iTerm' ]] && {
+    osascript 2>/dev/null <<EOF
+      tell application "iTerm" to activate
+
+      tell application "System Events"
+        tell process "iTerm"
+          tell menu item "Split Vertically With Current Profile" of menu "Shell" of menu bar item "Shell" of menu bar 1
+            click
+          end tell
+        end tell
+        keystroke "${command}; clear;"
+        keystroke return
+      end tell
+EOF
+  }
+}
+
+function split_tab() {
+  local command="cd \\\"$PWD\\\""
+  (( $# > 0 )) && command="${command}; $*"
+
+  the_app=$(
+    osascript 2>/dev/null <<EOF
+      tell application "System Events"
+        name of first item of (every process whose frontmost is true)
+      end tell
+EOF
+  )
+
+  [[ "$the_app" == 'iTerm' ]] && {
+    osascript 2>/dev/null <<EOF
+      tell application "iTerm" to activate
+
+      tell application "System Events"
+        tell process "iTerm"
+          tell menu item "Split Horizontally With Current Profile" of menu "Shell" of menu bar item "Shell" of menu bar 1
+            click
+          end tell
+        end tell
+        keystroke "${command}; clear;"
+        keystroke return
       end tell
 EOF
   }
@@ -61,11 +119,7 @@ function pfs() {
     repeat with item_index from 1 to count the_selection
       if item_index is less than item_count then set the_delimiter to "\n"
       if item_index is item_count then set the_delimiter to ""
-<<<<<<< HEAD
-      set output to output & ((item item_index of the_selection as alias)'s POSIX path) & the_delimiter 
-=======
       set output to output & ((item item_index of the_selection as alias)'s POSIX path) & the_delimiter
->>>>>>> 9da94481e9e0a36e16dbf3640e826e0056f0a221
     end repeat
 EOF
 }
