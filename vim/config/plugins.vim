@@ -26,7 +26,6 @@ Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rbenv'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sleuth'
@@ -34,6 +33,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'triglav/vim-visual-increment'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'xenoterracide/html.vim'
 " Vim.org bundles
 Bundle 'IndexedSearch'
 Bundle 'L9'
@@ -108,7 +108,7 @@ let g:ctrlp_status_func = {
   \ 'prog': 'CtrlP_Statusline_2'
 \ }
 
-let g:ctrlp_root_markers = ['Gemfile']
+let g:ctrlp_root_markers = ['Gemfile', '*.csproj']
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules)$',
