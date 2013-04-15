@@ -53,7 +53,9 @@ let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 let g:syntastic_javascript_checker="jshint"
 let g:syntastic_jsl_conf="~/.jsl.conf"
-let g:syntastic_disabled_filetypes=['html']
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['html'] }
 
 
 " CtrlP
@@ -114,10 +116,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules)$',
   \ 'file': '\v\.(png|jpg|gif|psd)$'
 \ }
-
-" Hammer
-let g:HammerQuiet=1
-let g:HammerTemplate="jsahlen"
 
 
 " yankstack
