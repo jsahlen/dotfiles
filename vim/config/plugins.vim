@@ -3,6 +3,7 @@ Bundle 'jsahlen/vim-snipmate-snippets'
 Bundle 'jsahlen/vim-tomorrow-theme'
 " GitHub bundles
 Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 Bundle 'godlygeek/tabular'

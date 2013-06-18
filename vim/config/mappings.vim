@@ -35,7 +35,7 @@ noremap <leader>p :set paste<CR>"*p<CR>:set nopaste<CR>
 noremap <leader>P :set paste<CR>"*P<CR>:set nopaste<CR>
 
 " Duplicate text (in Visual mode)
-vmap D y'>p
+vnoremap <leader>d y'>p
 
 " Select the text that was last edited/pasted.
 " http://vimcasts.org/episodes/bubbling-text/
