@@ -5,6 +5,9 @@
 #       VERSION:  1.1.0
 # ------------------------------------------------------------------------------
 
+alias showfiles='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
+alias hidefiles='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+
 function tab() {
   local command="cd \\\"$PWD\\\""
   (( $# > 0 )) && command="${command}; $*"
