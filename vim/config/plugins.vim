@@ -29,6 +29,7 @@ Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rbenv'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sleuth'
@@ -124,3 +125,7 @@ let g:ctrlp_custom_ignore = {
 " yankstack
 let g:yankstack_map_keys = 0
 nmap <C-p> <Plug>yankstack_substitute_older_paste
+" Rails.vim
+let g:rails_ctags_arguments = '--fields=+l'
+
+
