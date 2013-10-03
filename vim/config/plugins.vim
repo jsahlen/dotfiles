@@ -12,11 +12,11 @@ Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'mattn/emmet-vim'
 Bundle 'matze/vim-move'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/vitality.vim'
@@ -56,8 +56,6 @@ let NERDTreeDirArrows=1
 " Syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
-let g:syntastic_javascript_checker="jshint"
-let g:syntastic_jsl_conf="~/.jsl.conf"
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['html'] }
