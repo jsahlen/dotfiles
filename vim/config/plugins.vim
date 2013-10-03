@@ -12,6 +12,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'matze/vim-move'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
@@ -129,3 +130,5 @@ nmap <C-p> <Plug>yankstack_substitute_older_paste
 let g:rails_ctags_arguments = '--fields=+l'
 
 
+" vim-move
+let g:move_key_modifier = 'S'
