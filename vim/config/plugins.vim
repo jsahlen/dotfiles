@@ -113,7 +113,7 @@ let g:ctrlp_status_func = {
   \ 'prog': 'CtrlP_Statusline_2'
 \ }
 
-let g:ctrlp_root_markers = ['Gemfile', '*.csproj']
+let g:ctrlp_root_markers = ['Gemfile', '*.csproj', 'package.json']
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules)$',
