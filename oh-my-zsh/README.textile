@@ -4,10 +4,6 @@ oh-my-zsh is an open source, community-driven framework for managing your ZSH co
 
 bq. "OH MY ZSHELL!"
 
-h2. My branch
-
-This is bitboxers branch of oh-my-zsh. I added a few plugins (e.g. rvm+bundler completion, screen, gem-open) and my theme.
-
 h2. Setup
 
 @oh-my-zsh@ should work with any recent release of "zsh":http://www.zsh.org/, the minimum recommended version is 4.3.9.
@@ -18,18 +14,18 @@ You can install this via the command line with either `curl` or `wget`.
 
 h4. via `curl`
 
-@curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh@
+@curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh@
 
 h4. via `wget`
 
-@wget --no-check-certificate https://github.com/bitboxer/oh-my-zsh/raw/master/tools/install.sh -O - | sh@
+@wget --no-check-certificate https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh@
 
 h3. The manual way
 
 
 1. Clone the repository
 
-  @git clone git://github.com/bitboxer/oh-my-zsh.git ~/.oh-my-zsh@
+  @git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh@
 
 2. *OPTIONAL* Backup your existing ~/.zshrc file
 
@@ -56,7 +52,7 @@ h2. Usage
 ** example: @plugins=(git osx ruby)@
 * Theme support: Change the @ZSH_THEME@ environment variable in @~/.zshrc@.
 ** Take a look at the "current themes":https://wiki.github.com/robbyrussell/oh-my-zsh/themes that come bundled with _Oh My Zsh_.
-* much much more...  take a look at @lib/@ what _Oh My Zsh_ offers
+* much much more...  take a look at @lib/@ what _Oh My Zsh_ offers...
 
 h2. Useful
 
