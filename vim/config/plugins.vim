@@ -2,7 +2,6 @@
 Bundle 'jsahlen/vim-snipmate-snippets'
 Bundle 'jsahlen/vim-tomorrow-theme'
 " GitHub bundles
-Bundle 'airblade/vim-gitgutter'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'ervandew/supertab'
 Bundle 'evidens/vim-twig'
@@ -17,7 +16,6 @@ Bundle 'matze/vim-move'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/vitality.vim'
 Bundle 'slim-template/vim-slim'
@@ -36,6 +34,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-vinegar'
 Bundle 'triglav/vim-visual-increment'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'xenoterracide/html.vim'
@@ -45,24 +44,15 @@ Bundle 'L9'
 Bundle 'matchit.zip'
 
 
-" NERDTree
-noremap <leader>n :NERDTreeToggle<CR>
-autocmd FileType nerdtree setlocal nolist
-let NERDTreeMouseMode=1
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
-
-
 " Syntastic
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['html'] }
 
 
 " CtrlP
-
 function! CtrlP_Statusline_1(focus, byfname, regex, prev, item, next, marked)
   " Arguments:
   " |
@@ -107,6 +97,7 @@ endfunction
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 nmap <silent> <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nmap <silent> <leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_status_func = {
   \ 'main': 'CtrlP_Statusline_1',
