@@ -2,6 +2,7 @@
 Bundle 'jsahlen/vim-snipmate-snippets'
 Bundle 'jsahlen/vim-tomorrow-theme'
 " GitHub bundles
+Bundle 'chriskempson/base16-vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'ervandew/supertab'
 Bundle 'evidens/vim-twig'

@@ -1,9 +1,9 @@
 set encoding=utf-8
 
 syntax on                        " Enable syntax highlighting
-set t_Co=256                     " Use 256-color mode in terminals
+"set t_Co=256                     " Use 256-color mode in terminals
 set background=dark              " Some plugins need to know this
-colorscheme Tomorrow-Night       " Default colorscheme
+colorscheme base16-ocean         " Default colorscheme
 
 set backspace=indent,eol,start   " Allow backspacing over everything in insert mode
 set number                       " Show line numbers
