@@ -10,6 +10,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'mattn/emmet-vim'
 Bundle 'matze/vim-move'
@@ -17,8 +18,6 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'tomtom/tlib_vim'
@@ -54,35 +53,64 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['html'] }
 
 
-" Unite.vim
-let s:unite_ignores = [
-  \ '\(^\|/\)\(\.sass-cache\|node_modules\|Thumbs\.db\)',
-  \ '\.\(jpg\|png\|gif\|ico\|svg\|eot\|ttf\|woff\|swf\)$']
+" CtrlP
+function! CtrlP_Statusline_1(focus, byfname, regex, prev, item, next, marked)
+  " Arguments:
+  " |
+  " +- a:focus   : The focus of the prompt: "prt" or "win".
+  " |
+  " +- a:byfname : In filename mode or in full path mode: "file" or "path".
+  " |
+  " +- a:regex   : In regex mode: 1 or 0.
+  " |
+  " +- a:prev    : The previous search mode.
+  " |
+  " +- a:item    : The current search mode.
+  " |
+  " +- a:next    : The next search mode.
+  " |
+  " +- a:marked  : The number of marked files, or a comma separated list of
+  "                the marked filenames.
 
-call unite#custom#source('file_rec,file_rec/async,file_mru,file,buffer,grep',
-  \ 'ignore_pattern', unite#get_all_sources('file_rec')['ignore_pattern'] . '\|' .
-  \ join(s:unite_ignores, '\|'))
+  let a:statusline  = '[CtrlP] '
+  let a:statusline .= 'mode:' . substitute(a:item, ' ', '', 'g') . ' '
+  let a:statusline .= 'by:' . a:byfname . ' '
+  let a:statusline .= 'regex:' . (a:regex ? 'on' : 'off') . ' '
+  let a:statusline .= 'files:' . a:marked
+  let a:statusline .= '%='
+  let a:statusline .= ' [' . getcwd() . ']'
 
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-
-nmap <silent> <leader>t :Unite file_rec/async -buffer-name=files -start-insert -sync<cr>
-nmap <silent> <leader>b :Unite -buffer-name=buffers -no-split buffer<cr>
-if executable('ag')
-  nmap <leader>a :Unite -buffer-name=ag grep:
-  " Use ag in unite grep source.
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--line-numbers --nocolor --nogroup --hidden'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Close with <esc>
-  nmap <buffer> <silent> <esc> <Plug>(unite_exit)
+  return a:statusline
 endfunction
+
+function! CtrlP_Statusline_2(str)
+  " a:str : Either the number of files scanned so far, or a string indicating
+  "         the current directory is being scanned with a user_command.
+
+  let a:statusline  = '[CtrlP] '
+  let a:statusline .= '%2*' . a:str . '%*'
+  let a:statusline .= '%='
+  let a:statusline .= ' [' . getcwd() . ']'
+
+  return a:statusline
+endfunction
+
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
+nmap <silent> <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nmap <silent> <leader>b :CtrlPBuffer<CR>
+
+let g:ctrlp_status_func = {
+  \ 'main': 'CtrlP_Statusline_1',
+  \ 'prog': 'CtrlP_Statusline_2'
+\ }
+
+let g:ctrlp_root_markers = ['Gemfile', '*.csproj', 'package.json']
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules)$',
+  \ 'file': '\v\.(png|jpg|gif|psd)$'
+\ }
 
 
 " yankstack
