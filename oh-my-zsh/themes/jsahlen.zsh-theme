@@ -3,7 +3,8 @@ PROMPTCOLOR=$fg_bold[cyan] # Default
 case `hostname -s` in
   tallest)     PROMPTCOLOR=$fg_bold[red]     ;; # Hackintosh at home
   minimoose)   PROMPTCOLOR=$fg_bold[blue]    ;; # Mac Mini at home
-  irken-scout) PROMPTCOLOR=$fg_bold[magenta] ;; # VPS
+  irken-scout) PROMPTCOLOR=$fg_bold[magenta] ;; # VPS #1
+  lemongrab)   PROMPTCOLOR=$fg_bold[magenta] ;; # VPS #2
 esac
 
 PROMPTCHAR=$([[ $(whoami) == "root" ]] && echo "#" || echo "➜")
