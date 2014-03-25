@@ -6,7 +6,9 @@ case `hostname -s` in
   irken-scout) PROMPTCOLOR=$fg_bold[magenta] ;; # VPS
 esac
 
-PROMPT='%{$PROMPTCOLOR%}%p%~ ➜ %{$reset_color%}'
+PROMPTCHAR=$([[ $(whoami) == "root" ]] && echo "#" || echo "➜")
+
+PROMPT='%{$PROMPTCOLOR%}%p%~ $PROMPTCHAR %{$reset_color%}'
 
 RPROMPT='$(git_prompt_info)'
 
