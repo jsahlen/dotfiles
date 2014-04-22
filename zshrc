@@ -55,8 +55,8 @@ alias sudo='nocorrect sudo'
 # Always use colors with `tree`
 hash tree &>/dev/null && alias tree='tree -C'
 
-# Alias to go to download dir
-alias cdd="cd /Volumes/Media/Downloads"
-
 # Alias for todotxt
 alias t="todotxt"
+
+# Load local aliases file
+if [[ -s ~/.zshaliases.local ]] ; then source ~/.zshaliases.local ; fi
