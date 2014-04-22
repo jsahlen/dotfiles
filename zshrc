@@ -49,8 +49,8 @@ if [[ -s ~/.zshrc.local ]] ; then source ~/.zshrc.local ; fi
 # Set ls colors
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
-# Enable `sudo` with aliases
-alias sudo='sudo '
+# Enable `sudo` with aliases and disable corrections
+alias sudo='nocorrect sudo'
 
 # Always use colors with `tree`
 hash tree &>/dev/null && alias tree='tree -C'
