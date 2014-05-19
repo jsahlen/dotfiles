@@ -32,3 +32,8 @@
 	default = current
 [github]
 	user = jsahlen
+[status]
+	short = 1
+	branch = 1
+[credential]
+	helper = osxkeychain
