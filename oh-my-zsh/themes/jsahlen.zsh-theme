@@ -1,10 +1,10 @@
 # Decide prompt color based on host name:
 PROMPTCOLOR=$fg_bold[cyan] # Default
 case `hostname -s` in
+  skoodge)     PROMPTCOLOR=$fg_bold[red]     ;; # Laptop
   tallest)     PROMPTCOLOR=$fg_bold[red]     ;; # Hackintosh at home
-  minimoose)   PROMPTCOLOR=$fg_bold[blue]    ;; # Mac Mini at home
-  irken-scout) PROMPTCOLOR=$fg_bold[magenta] ;; # VPS #1
-  lemongrab)   PROMPTCOLOR=$fg_bold[magenta] ;; # VPS #2
+  minimoose)   PROMPTCOLOR=$fg_bold[blue]    ;; # HTPC at home
+  lemongrab)   PROMPTCOLOR=$fg_bold[magenta] ;; # VPS
 esac
 
 PROMPTCHAR=$([[ $(whoami) == "root" ]] && echo "#" || echo "➜")
