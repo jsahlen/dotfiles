@@ -40,6 +40,7 @@ Bundle 'triglav/vim-visual-increment'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'xenoterracide/html.vim'
 " Vim.org bundles
+Bundle 'gitignore'
 Bundle 'IndexedSearch'
 Bundle 'L9'
 Bundle 'matchit.zip'
