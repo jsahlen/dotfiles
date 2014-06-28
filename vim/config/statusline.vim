@@ -91,7 +91,7 @@ endfunction
 
 function! StatuslineGitChanged()
   if !exists("b:statusline_git_changed")
-    let has_changes = system('git status -s 2> /dev/null')
+    let has_changes = system('git status --short --no-branch 2> /dev/null')
     if has_changes != ''
       let b:statusline_git_changed = 1
     else
