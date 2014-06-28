@@ -19,6 +19,10 @@ set laststatus=2                 " Always show the statusline
 set equalalways                  " Multiple windows, when created, are equal in size
 set ttyfast                      " Indicate a fast terminal connection
 
+if has("patch-7.4.338")
+  set breakindent                " Indent wrapped code
+end
+
 " Scrollbars
 set scrolloff=3                  " Minimal number of lines to show above/below the cursor
 set sidescrolloff=5              " Minimal number of columns to show to the right/left of the cursor
