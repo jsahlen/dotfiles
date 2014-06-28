@@ -9,7 +9,7 @@ if has("autocmd")
   au FileType php  set noexpandtab
 
   " These files are also HTML
-  au BufRead,BufNewFile *.{jst,cshtml,hbs} set ft=html
+  au BufRead,BufNewFile *.{jst,cshtml} set ft=html
 
   " These files are also Ruby
   au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,Vagrantfile,Guardfile,config.ru} set ft=ruby
