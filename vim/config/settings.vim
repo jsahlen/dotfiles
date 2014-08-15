@@ -18,6 +18,7 @@ set showcmd                      " Show partial command in the last line of the 
 set laststatus=2                 " Always show the statusline
 set equalalways                  " Multiple windows, when created, are equal in size
 set ttyfast                      " Indicate a fast terminal connection
+set colorcolumn=80               " Highlight the 80th column
 
 if has("patch-7.4.338")
   set breakindent                " Indent wrapped code
