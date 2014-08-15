@@ -79,3 +79,6 @@ endif
 
 " Force save files that require root permission
 cmap w!! %!sudo tee > /dev/null %
+
+" Stop the stupid window from popping up
+map q: :q
