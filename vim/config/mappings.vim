@@ -34,6 +34,11 @@ noremap <leader>y "*y
 noremap <leader>p :set paste<CR>"*p<CR>:set nopaste<CR>
 noremap <leader>P :set paste<CR>"*P<CR>:set nopaste<CR>
 
+" When yanking and pasting, jump to the end of the selection
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " Duplicate text (in Visual mode)
 vnoremap <leader>d y'>p
 
