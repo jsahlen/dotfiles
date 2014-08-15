@@ -118,6 +118,9 @@ let g:ctrlp_custom_ignore = {
 " yankstack
 let g:yankstack_map_keys = 0
 nmap <C-p> <Plug>yankstack_substitute_older_paste
+call yankstack#setup()
+
+
 " Rails.vim
 let g:rails_ctags_arguments = '--fields=+l'
 
