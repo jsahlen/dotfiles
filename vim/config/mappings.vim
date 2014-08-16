@@ -27,20 +27,20 @@ map <S-Enter> O<ESC>
 " Also map <Leader><Enter> for Terminal Vim
 map <leader><Enter> O<ESC>
 
-" Yank to OS X clipboard
-noremap <leader>y "*y
-
-" Paste from OS X clipboard without messing up indent
-noremap <leader>p :set paste<CR>"*p<CR>:set nopaste<CR>
-noremap <leader>P :set paste<CR>"*P<CR>:set nopaste<CR>
-
 " When yanking and pasting, jump to the end of the selection
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
+" Yank to system clipboard
+map <leader>y "*y
+
+" Paste from system clipboard without messing up indent
+map <leader>p :set paste<CR>"*p<CR>:set nopaste<CR>
+map <leader>P :set paste<CR>"*P<CR>:set nopaste<CR>
+
 " Duplicate text (in Visual mode)
-vnoremap <leader>d y'>p
+vmap <leader>d y'>p
 
 " Select the text that was last edited/pasted.
 " http://vimcasts.org/episodes/bubbling-text/
