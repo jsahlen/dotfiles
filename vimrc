@@ -2,18 +2,23 @@ set nocompatible
 let mapleader = ","
 let maplocalleader = mapleader
 
-" Vundle for plugin management.
-" https://github.com/gmarik/vundle
+" NeoBundle for plugin management.
+" https://github.com/Shougo/neobundle.vim
 " filetype off and then on again afterwards for ftdetect files to work properly.
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-
-" These must be loaded before turning filetype back on.
+set rtp+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
 source ~/.vim/config/plugins.vim
+call neobundle#end()
+
 " Load plugin and indent settings for the detected filetype.
 filetype plugin indent on
+
+" Prompt to install new bundles
+NeoBundleCheck
+
+" yankstack needs to be initialized before any mappings, etc
+call yankstack#setup()
 
 
 " .vimrc split into separate files
