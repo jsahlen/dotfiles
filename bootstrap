@@ -18,9 +18,9 @@ Dir['*'].each do |file|
 end
 
 
-# Prepare Vundle
+# Prepare NeoBundle
 
-unless File.directory? "vim/bundle/vundle"
-  puts "Cloning gmarik/vundle"
-  `git clone git://github.com/gmarik/vundle.git vim/bundle/vundle`
+unless File.directory? "vim/bundle/neobundle.vim"
+  puts "Cloning Shougo/neobundle.vim"
+  `git clone git://github.com/Shougo/neobundle.vim vim/bundle/neobundle.vim`
 end
