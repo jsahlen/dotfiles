@@ -3,7 +3,7 @@
 home = File.expand_path('~')
 
 Dir['*'].each do |file|
-  next if file =~ /bootstrap|README/
+  next if file =~ /bootstrap|README|terminfo/
   target = File.join(home, ".#{file}")
 
   if File.symlink? target

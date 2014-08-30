@@ -4,6 +4,7 @@ syntax on                        " Enable syntax highlighting
 "set t_Co=256                     " Use 256-color mode in terminals
 set background=dark              " Some plugins need to know this
 colorscheme base16-ocean         " Default colorscheme
+hi Comment cterm=italic
 
 set backspace=indent,eol,start   " Allow backspacing over everything in insert mode
 set number                       " Show line numbers

@@ -55,6 +55,9 @@ alias sudo='nocorrect sudo'
 # Always use colors with `tree`
 hash tree &>/dev/null && alias tree='tree -C'
 
+# Reset $TERM when ssh'ing
+alias ssh='TERM=xterm-256color ssh'
+
 # Alias for todotxt
 alias t="todotxt"
 
