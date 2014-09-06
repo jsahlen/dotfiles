@@ -1,51 +1,3 @@
-" My own bundles
-NeoBundle 'jsahlen/vim-snipmate-snippets'
-NeoBundle 'jsahlen/vim-tomorrow-theme'
-" GitHub bundles
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'evidens/vim-twig'
-NeoBundle 'garbas/vim-snipmate'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'junegunn/goyo.vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'matze/vim-move'
-NeoBundle 'maxbrunsfeld/vim-yankstack'
-NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'sjl/vitality.vim'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'tomtom/tlib_vim'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-rbenv'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-vinegar'
-NeoBundle 'triglav/vim-visual-increment'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'xenoterracide/html.vim'
-" Vim.org bundles
-NeoBundle 'gitignore'
-NeoBundle 'IndexedSearch'
-NeoBundle 'L9'
-NeoBundle 'matchit.zip'
 
 
 " Syntastic
@@ -119,6 +71,7 @@ let g:ctrlp_custom_ignore = {
 " yankstack
 let g:yankstack_map_keys = 0
 nmap <C-p> <Plug>yankstack_substitute_older_paste
+call yankstack#setup()
 
 
 " Rails.vim
