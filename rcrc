@@ -1,2 +1,2 @@
 COPY_ALWAYS="rcrc"
-EXCLUDES="README.md terminfo"
+EXCLUDES="rcrc README.md terminfo"
