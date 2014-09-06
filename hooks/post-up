@@ -10,5 +10,5 @@ fi
 
 if [ ! -e $HOME/.vim/bundle/neobundle.vim ]; then
   git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
-  vim +BundleInstall +qa
+  vim -u $HOME/.vimrc.bundles +qa
 fi
