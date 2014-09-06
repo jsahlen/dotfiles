@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ ! -d $HOME/.oh-my-zsh ]; then
+  git clone git://github.com/robbyrussell/oh-my-zsh $HOME/.oh-my-zsh
+fi
+
+if [ -d $HOME/.vim ] && [ ! -d $HOME/.vim/backup ]; then
+  mkdir -p $HOME/.vim/backup
+fi
+
+if [ ! -e $HOME/.vim/bundle/neobundle.vim ]; then
+  git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+  vim +BundleInstall +qa
+fi

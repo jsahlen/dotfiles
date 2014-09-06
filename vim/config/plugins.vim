@@ -9,6 +9,7 @@ NeoBundle 'evidens/vim-twig'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'groenewege/vim-less'
+NeoBundle 'junegunn/goyo.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
@@ -126,3 +127,7 @@ let g:rails_ctags_arguments = '--fields=+l'
 
 " vim-move
 let g:move_key_modifier = 'S'
+
+
+" Goyo
+nmap <silent> <leader>g :Goyo<CR> 
