@@ -11,6 +11,9 @@ inoremap <Up> <C-o>gk
 noremap <leader>v :vsplit<CR><c-w>l
 noremap <leader>h :split<CR><c-w>j
 
+" Delete all buffers
+noremap <silent> <leader>bd :bufdo bdelete<CR>
+
 " Switch between tabs/spaces for indentation
 nnoremap <leader>s :set expandtab!<CR>
 
