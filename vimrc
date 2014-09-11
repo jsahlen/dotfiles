@@ -8,26 +8,22 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-
 " Load plugin and indent settings for the detected filetype.
 filetype plugin indent on
-
 
 " Prompt to install new bundles
 NeoBundleCheck
 
 
 " .vimrc split into separate files
-
-source ~/.vim/config/plugins.vim
 source ~/.vim/config/autocommands.vim
-source ~/.vim/config/settings.vim
 source ~/.vim/config/mappings.vim
+source ~/.vim/config/plugins.vim
+source ~/.vim/config/settings.vim
 source ~/.vim/config/statusline.vim
 
 
 " Host-specific config
-
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
