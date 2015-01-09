@@ -14,7 +14,7 @@ export ZSH_THEME="jsahlen"
 # oh-my-zsh plugins
 plugins=(colored-man gem gitfast gnu-utils heroku nodenv npm pd rake rbenv bundler server tmux tmuxinator history-substring-search vagrant)
 # Mac-specific oh-my-zsh plugins
-[[ `uname` == "Darwin" ]] && plugins+=(brew lioncwd osx)
+[[ `uname` == "Darwin" ]] && plugins+=(brew brew-cask lioncwd osx)
 
 # Load oh-my-zsh
 if [[ -d $ZSH ]] ; then
