@@ -37,7 +37,7 @@ set numberwidth=4                " Minimal number of columns to use for the line
 set cursorline                   " Highlight cursor line
 
 " Invisibles
-set listchars=tab:‣\ ,trail:•,eol:¬ " Define how invisible characters are displayed
+set listchars=tab:‣\ ,trail:•,eol:¬,nbsp:• " Define how invisible characters are displayed
 set list                         " Show invisibles by default
 
 " Indentation
