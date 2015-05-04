@@ -84,3 +84,11 @@ let g:move_key_modifier = 'S'
 
 " Goyo
 nmap <silent> <leader>g :Goyo<CR> 
+
+
+" SuperTab
+let g:SuperTabDefaultCompletionType = 'context'
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-p>") |
+  \ endif
