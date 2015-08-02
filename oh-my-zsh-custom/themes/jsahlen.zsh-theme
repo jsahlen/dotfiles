@@ -1,6 +1,6 @@
 # Decide prompt color based on host name:
 PROMPTCOLOR=$fg_bold[cyan] # Default
-case `hostname -s` in
+case `hostname -s | tr '[:upper:]' '[:lower:]'` in
   skoodge)     PROMPTCOLOR=$fg_bold[red]     ;; # Laptop
   tallest)     PROMPTCOLOR=$fg_bold[red]     ;; # Hackintosh at home
   minimoose)   PROMPTCOLOR=$fg_bold[blue]    ;; # HTPC at home
