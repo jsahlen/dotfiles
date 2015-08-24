@@ -55,6 +55,7 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'triglav/vim-visual-increment'
 NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'wincent/terminus'
 NeoBundle 'xenoterracide/html.vim'
 " Vim.org bundles
 NeoBundle 'gitignore'
