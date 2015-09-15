@@ -10,9 +10,6 @@ if $TERM =~ "-italic"
   hi Comment cterm=italic
 endif
 
-" Don't underline things?
-hi Underlined cterm=NONE
-
 set backspace=indent,eol,start   " Allow backspacing over everything in insert mode
 set number                       " Show line numbers
 set visualbell                   " Don't beep
