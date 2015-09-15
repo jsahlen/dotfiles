@@ -15,6 +15,7 @@ NeoBundle 'jsahlen/vim-snipmate-snippets'
 NeoBundle 'jsahlen/vim-tomorrow-theme'
 " GitHub bundles
 NeoBundle 'ahayman/vim-nodejs-complete'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'ervandew/supertab'
