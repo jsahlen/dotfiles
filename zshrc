@@ -12,7 +12,9 @@ export ZSH_THEME="jsahlen"
 (($+TMUX || $+SSH_CLIENT)) && DISABLE_AUTO_TITLE="true"
 
 # oh-my-zsh plugins
-plugins=(colored-man dotenv gem gitfast gnu-utils heroku nodenv npm pd rake rbenv bundler server tmux tmuxinator history-substring-search vagrant z)
+plugins=(colored-man dotenv gem gitfast gnu-utils heroku nodenv npm pd rake rbenv bundler server history-substring-search vagrant z)
+# tmux plugins
+hash tmux &>/dev/null && plugins+=(tmux tmuxinator)
 # Mac-specific oh-my-zsh plugins
 [[ `uname` == "Darwin" ]] && plugins+=(brew brew-cask lioncwd osx)
 
