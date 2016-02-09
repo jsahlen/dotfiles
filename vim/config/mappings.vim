@@ -39,8 +39,8 @@ nnoremap <silent> p p`]
 map <leader>y "*y
 
 " Paste from system clipboard without messing up indent
-map <leader>p :set paste<CR>"*p<CR>:set nopaste<CR>
-map <leader>P :set paste<CR>"*P<CR>:set nopaste<CR>
+map <leader>p :set paste<CR>"*p:set nopaste<CR>
+map <leader>P :set paste<CR>"*P:set nopaste<CR>
 
 " Duplicate text (in Visual mode)
 vmap <leader>d y'>p
