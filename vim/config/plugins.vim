@@ -101,3 +101,4 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline_theme = 'base16'
