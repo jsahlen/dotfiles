@@ -24,6 +24,7 @@ set laststatus=2                 " Always show the statusline
 set equalalways                  " Multiple windows, when created, are equal in size
 set ttyfast                      " Indicate a fast terminal connection
 set colorcolumn=80               " Highlight the 80th column
+set lazyredraw                   " Lazy redraw for improved performance
 
 if has("patch-7.4.338")
   set breakindent                " Indent wrapped code
