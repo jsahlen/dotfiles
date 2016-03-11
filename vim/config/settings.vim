@@ -39,7 +39,7 @@ set cursorline                   " Highlight cursor line
 
 " Invisibles
 set listchars=tab:‣\ ,trail:•,eol:¬,nbsp:• " Define how invisible characters are displayed
-set list                         " Show invisibles by default
+set nolist                       " Show invisibles by default
 
 " Indentation
 set tabstop=2                    " With of a tab character
