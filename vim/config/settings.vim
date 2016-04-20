@@ -1,9 +1,9 @@
 set encoding=utf-8
 
 syntax on                        " Enable syntax highlighting
-"set t_Co=256                     " Use 256-color mode in terminals
+set t_Co=256                     " Use 256-color mode in terminals
 set background=dark              " Some plugins need to know this
-colorscheme base16-default       " Default colorscheme
+colorscheme base16-ocean         " Default colorscheme
 
 " Show comments as italic if terminal supports it
 if $TERM =~ "-italic"
