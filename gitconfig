@@ -8,8 +8,8 @@
 	remote = green
 [color "diff"]
 	meta = yellow reverse
-	frag = black reverse
-	plain = black
+	frag = white reverse
+	plain = 8
 	old = red
 	new = green
 [color "status"]
