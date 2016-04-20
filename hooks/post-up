@@ -8,6 +8,11 @@ if [ -d $HOME/.vim ] && [ ! -d $HOME/.vim/backup ]; then
   mkdir -p $HOME/.vim/backup
 fi
 
+if [ ! -e $HOME/.config/base16-shell ]; then
+  mkdir -p $HOME/.config
+  git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+fi
+
 if [ ! -e $HOME/.vim/bundle/neobundle.vim ]; then
   git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
   vim -u $HOME/.vimrc.bundles +NeoBundleInstall +qa

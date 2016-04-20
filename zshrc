@@ -52,5 +52,9 @@ alias ssh='TERM=xterm-256color ssh'
 # Alias for todotxt
 alias t="todotxt"
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # Load local aliases file
 [[ -s ~/.zshaliases.local ]] && source ~/.zshaliases.local
