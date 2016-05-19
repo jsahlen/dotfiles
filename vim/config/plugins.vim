@@ -53,8 +53,9 @@ endfunction
 
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
-nmap <silent> <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nmap <silent> <leader>T :CtrlPCurFile<CR>
 nmap <silent> <leader>b :CtrlPBuffer<CR>
+nmap <silent> <leader>c :CtrlPTag<CR>
 
 let g:ctrlp_status_func = {
   \ 'main': 'CtrlP_Statusline_1',
@@ -67,6 +68,11 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules)$',
   \ 'file': '\v\.(png|jpg|gif|psd)$'
 \ }
+
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 0
 
 
 " yankstack
