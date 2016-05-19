@@ -31,8 +31,9 @@ mkcd () {
   cd "$*"
 }
 
-# Set EDITOR to vim
+# Set EDITOR to vim (or neovim, if available)
 export EDITOR=vim
+hash nvim &>/dev/null && export EDITOR=nvim
 
 # Load local zshrc file
 [[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
