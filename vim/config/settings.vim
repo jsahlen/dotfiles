@@ -30,6 +30,12 @@ if has("patch-7.4.338")
   set breakindent                " Indent wrapped code
 end
 
+" NeoVim-specific config
+if has('nvim')
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+endif
+
 " Scrollbars
 set scrolloff=3                  " Minimal number of lines to show above/below the cursor
 set sidescrolloff=5              " Minimal number of columns to show to the right/left of the cursor
