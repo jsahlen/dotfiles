@@ -34,7 +34,6 @@ NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'rking/ag.vim'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sjl/vitality.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -60,6 +59,10 @@ NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'wincent/terminus'
 NeoBundle 'xenoterracide/html.vim'
+" NeoVim-specific bundles
+if has('nvim')
+  NeoBundle 'benekastah/neomake'
+end
 " Vim.org bundles
 NeoBundle 'gitignore'
 NeoBundle 'IndexedSearch'
