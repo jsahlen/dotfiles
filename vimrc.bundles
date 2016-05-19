@@ -14,6 +14,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'jsahlen/vim-snipmate-snippets'
 NeoBundle 'jsahlen/vim-tomorrow-theme'
 " GitHub bundles
+NeoBundle '907th/vim-auto-save'
 NeoBundle 'ahayman/vim-nodejs-complete'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
