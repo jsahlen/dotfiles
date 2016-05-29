@@ -2,68 +2,62 @@ if &compatible
   set nocompatible
 endif
 
-" Initialize NeoBundle
-filetype off
-set rtp+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Manage NeoBundle itself
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Initialize Vim-Plug
+call plug#begin('~/.vim/bundle')
 
 " My own bundles
-NeoBundle 'jsahlen/vim-snipmate-snippets'
-NeoBundle 'jsahlen/vim-tomorrow-theme'
+Plug 'jsahlen/vim-snipmate-snippets'
+Plug 'jsahlen/vim-tomorrow-theme'
 " GitHub bundles
-NeoBundle '907th/vim-auto-save'
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'FelikZ/ctrlp-py-matcher'
-NeoBundle 'junegunn/goyo.vim'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'matze/vim-move'
-NeoBundle 'maxbrunsfeld/vim-yankstack'
-NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'othree/javascript-libraries-syntax.vim'
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'sjl/vitality.vim'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'tomtom/tlib_vim'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-vinegar'
-NeoBundle 'triglav/vim-visual-increment'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'xenoterracide/html.vim'
+Plug '907th/vim-auto-save'
+Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'junegunn/goyo.vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'matze/vim-move'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'rking/ag.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'sjl/vitality.vim'
+Plug 'terryma/vim-multiple-cursors'
+"NeoBundle 'tomtom/tlib_vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'triglav/vim-visual-increment'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ruby/vim-ruby'
+Plug 'xenoterracide/html.vim', { 'for': 'html' }
 " NeoVim-specific bundles
 if has('nvim')
-  NeoBundle 'benekastah/neomake'
-  NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
-  NeoBundle 'Shougo/deoplete.nvim'
-  NeoBundle 'ternjs/tern_for_vim', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
+  Plug 'benekastah/neomake'
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
 end
 " Vim.org bundles
-NeoBundle 'gitignore'
-NeoBundle 'IndexedSearch'
-NeoBundle 'L9'
-NeoBundle 'matchit.zip'
+Plug 'gitignore'
+Plug 'IndexedSearch'
+Plug 'L9'
+Plug 'matchit.zip'
 
 
-" Install
-call neobundle#end()
-filetype on
+" End Vim-Plug config
+call plug#end()

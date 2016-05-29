@@ -11,9 +11,6 @@ endif
 " Load plugin and indent settings for the detected filetype.
 filetype plugin indent on
 
-" Prompt to install new bundles
-NeoBundleCheck
-
 
 " .vimrc split into separate files
 source ~/.vim/config/autocommands.vim
