@@ -89,13 +89,6 @@ let g:move_key_modifier = 'S'
 nmap <silent> <leader>g :Goyo<CR> 
 
 
-" SuperTab
-let g:SuperTabDefaultCompletionType = 'context'
-autocmd FileType *
-  \ if &omnifunc != '' |
-  \   call SuperTabChain(&omnifunc, "<c-p>") |
-  \ endif
-
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -108,3 +101,61 @@ let g:airline_theme = 'base16'
 
 " base16 colorscheme
 let base16colorspace=256
+
+" Deoplete + Neosnippet
+if has("nvim")
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#disable_auto_complete = 1
+  if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+  endif
+
+  autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+  imap <silent><expr><Tab>
+     \ pumvisible() ? "\<C-n>"
+     \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
+     \ : (<SID>is_whitespace() ? "\<Tab>"
+     \ : deoplete#mappings#manual_complete()))
+
+  smap <silent><expr><Tab>
+     \ pumvisible() ? "\<C-n>"
+     \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
+     \ : (<SID>is_whitespace() ? "\<Tab>"
+     \ : deoplete#mappings#manual_complete()))
+
+  inoremap <expr><S-Tab>
+         \ pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  function! s:is_whitespace() "{{{
+    let col = col('.') - 1
+    return ! col || getline('.')[col - 1] =~? '\s'
+  endfunction "}}}
+
+  inoremap <expr><BS>
+         \ deoplete#mappings#smart_close_popup()."\<C-h>"
+  inoremap <expr><C-g>
+         \ deoplete#mappings#undo_completion()
+
+  augroup omnifuncs
+    autocmd!
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  augroup end
+endif
+
+" tern
+if has("nvim")
+  let g:tern_request_timeout = 1
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+endif
+
+" Neosnippets
+if has("nvim")
+  let g:neosnippet#enable_snipmate_compatibility = 1
+  let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snipmate-snippets/snippets/'
+endif

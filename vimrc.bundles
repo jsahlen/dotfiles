@@ -15,14 +15,11 @@ NeoBundle 'jsahlen/vim-snipmate-snippets'
 NeoBundle 'jsahlen/vim-tomorrow-theme'
 " GitHub bundles
 NeoBundle '907th/vim-auto-save'
-NeoBundle 'ahayman/vim-nodejs-complete'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'ervandew/supertab'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'FelikZ/ctrlp-py-matcher'
-NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'junegunn/goyo.vim'
@@ -35,6 +32,7 @@ NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'sjl/vitality.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -58,11 +56,13 @@ NeoBundle 'triglav/vim-visual-increment'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'wincent/terminus'
 NeoBundle 'xenoterracide/html.vim'
 " NeoVim-specific bundles
 if has('nvim')
   NeoBundle 'benekastah/neomake'
+  NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
+  NeoBundle 'Shougo/deoplete.nvim'
+  NeoBundle 'ternjs/tern_for_vim', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
 end
 " Vim.org bundles
 NeoBundle 'gitignore'
