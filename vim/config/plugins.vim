@@ -125,6 +125,12 @@ if exists('g:plugs["tern_for_vim"]') || exists('g:plugs["deoplete-ternjs"]')
   let g:tern_show_signature_in_pum = 1
   let g:tern#command = ["tern"]
   let g:tern#arguments = ["--persistent"]
+
+  nnoremap <silent> td :TernDef<CR>
+  nnoremap <silent> tp :TernDefPreview<CR>
+  nnoremap <silent> ts :TernDefSplit<CR>
+  nnoremap <silent> tt :TernDefTab<CR>
+  nnoremap <silent> tr :TernRefs<CR>
 endif
 
 " Neosnippets
