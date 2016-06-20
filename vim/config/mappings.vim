@@ -49,9 +49,9 @@ vmap <leader>d y'>p
 " http://vimcasts.org/episodes/bubbling-text/
 nmap gV `[v`]
 
-" Shift + left/right to switch tabs.
-noremap <silent> <S-Left> :tabp<CR>
-noremap <silent> <S-Right> :tabn<CR>
+" H/N to move between tabs
+nnoremap <silent> L :tabnext<CR>
+nnoremap <silent> H :tabprev<CR>
 
 " Tab/shift-tab to indent/outdent in visual mode.
 vnoremap <Tab> >gv
