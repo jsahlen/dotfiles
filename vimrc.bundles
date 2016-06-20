@@ -18,10 +18,10 @@ Plug 'junegunn/goyo.vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'matze/vim-move'
 Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/yajs.vim'
 Plug 'rking/ag.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'sjl/vitality.vim'
@@ -32,7 +32,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
@@ -44,7 +44,7 @@ Plug 'triglav/vim-visual-increment'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
-Plug 'xenoterracide/html.vim', { 'for': 'html' }
+Plug 'xenoterracide/html.vim'
 " NeoVim-specific bundles
 if has('nvim')
   Plug 'benekastah/neomake'
