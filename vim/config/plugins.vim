@@ -68,6 +68,7 @@ endif
 
 
 " base16 colorscheme
+let g:base16_shell_path="~/.config/base16-shell"
 if !has("nvim")
   let base16colorspace=256
 endif
