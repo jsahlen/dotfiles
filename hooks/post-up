@@ -9,8 +9,12 @@ if [ -d $HOME/.vim ] && [ ! -d $HOME/.vim/backup ]; then
 fi
 
 if [ ! -e $HOME/.config/base16-shell ]; then
-  mkdir -p $HOME/.config
-  git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+  read -p "Install base16-shell? [y/N] " -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    mkdir -p $HOME/.config
+    git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+  fi
 fi
 
 if [ ! -f $HOME/.vim/autoload/plug.vim ]; then
