@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ ! -d $HOME/.oh-my-zsh ]; then
-  git clone https://github.com/robbyrussell/oh-my-zsh $HOME/.oh-my-zsh
+if [ ! -d $HOME/.zplug ]; then
+  git clone https://github.com/zplug/zplug $HOME/.zplug
 fi
 
 if [ -d $HOME/.vim ] && [ ! -d $HOME/.vim/backup ]; then
