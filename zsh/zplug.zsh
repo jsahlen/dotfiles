@@ -1,6 +1,4 @@
-#
-# Local files
-#
+zplug "zplug/zplug"
 
 zplug "~/.zsh/vendor", \
   from:local, \
@@ -20,4 +18,3 @@ zplug "jsahlen/nodenv.plugin.zsh"
 zplug "jreese/zsh-titles"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", nice:19
-zplug "zplug/zplug"
