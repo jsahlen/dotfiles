@@ -1,10 +1,9 @@
 # Completion style
-zstyle ':completion:*:default' menu select=2
+zstyle ':completion:*:default' menu select=1
 
 # Completing misc
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' verbose yes
-zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
 zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters

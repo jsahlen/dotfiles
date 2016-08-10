@@ -41,5 +41,6 @@ setopt auto_param_keys
 setopt interactive_comments
 setopt magic_equal_subst
 setopt complete_in_word
+setopt always_to_end
 setopt always_last_prompt
 setopt globdots
