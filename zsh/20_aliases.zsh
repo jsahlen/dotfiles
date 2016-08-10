@@ -1,5 +1,16 @@
-# Use colors for `ls`
-alias ls="ls -G"
+# Awesome platform-independent ls formatting
+# From https://github.com/joshdick/dotfiles/blob/master/zsh.symlink/aliases.zsh
+GLS_ARGS="--classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable"
+alias ls="ls $GLS_ARGS"
+ls &> /dev/null
+if [ $? -eq 1 ]; then # The environment ls isn't GNU ls; we're not on Linux
+  # On OS X, use gls if it has been installed via Homebrew
+  if hash gls &> /dev/null; then
+    alias ls="gls $GLS_ARGS"
+  else
+    alias ls='ls -G' # If not, fall back to BSD ls
+  fi
+fi
 
 # Enable some commands with aliases and disable corrections
 alias cp="nocorrect cp"
