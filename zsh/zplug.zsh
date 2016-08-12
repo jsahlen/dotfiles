@@ -13,6 +13,5 @@ zplug "plugins/rbenv", from:oh-my-zsh
 zplug "plugins/bundler", from:oh-my-zsh
 
 zplug "jsahlen/nodenv.plugin.zsh"
-zplug "jreese/zsh-titles"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", nice:19
