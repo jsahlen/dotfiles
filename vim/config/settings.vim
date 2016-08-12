@@ -7,7 +7,7 @@ colorscheme base16-oceanicnext   " Default colorscheme
 
 " Show comments as italic if terminal supports it
 if $TERM =~ "-italic"
-  hi Comment cterm=italic
+  hi Comment cterm=italic gui=italic
 endif
 
 set backspace=indent,eol,start   " Allow backspacing over everything in insert mode
@@ -28,6 +28,7 @@ set breakindent                  " Indent wrapped code
 
 " NeoVim-specific config
 if has('nvim')
+  set termguicolors
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
