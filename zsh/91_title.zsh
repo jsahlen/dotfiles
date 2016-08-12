@@ -4,20 +4,23 @@ function title() {
   local TAB_TITLE="${1}"
   local WINDOW_TITLE="${2=$1}"
 
-  if [[ "$TERM" =~ "xterm*" ]]; then
-    print -Pn "\e]0;$TAB_TITLE\a"
-  fi
-
-  if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
-    print -Pn "\e]2;$WINDOW_TITLE:q\a" # set window name
-    print -Pn "\e]1;$TAB_TITLE:q\a" # set tab name
+  if [[ -n "$TMUX" ]]; then
+    print -Pn "\e]2;$TAB_TITLE\a"
   else
-    # Try to use terminfo to set the title
-    # If the feature is available set title
-    if [[ -n "$terminfo[fsl]" ]] && [[ -n "$terminfo[tsl]" ]]; then
-      echoti tsl
-      print -Pn "$TAB_TITLE"
-      echoti fsl
+    if [[ "$TERM" =~ "xterm*" ]]; then
+      print -Pn "\e]0;$TAB_TITLE\a"
+    fi
+
+    if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
+      print -Pn "\e]1;$TAB_TITLE\a"
+      print -Pn "\e]2;$WINDOW_TITLE\a"
+    else
+      # Try to use terminfo to set the title
+      if [[ -n "$terminfo[fsl]" ]] && [[ -n "$terminfo[tsl]" ]]; then
+        echoti tsl
+        print -Pn "$TAB_TITLE"
+        echoti fsl
+      fi
     fi
   fi
 }
