@@ -4,12 +4,16 @@ __git_prompt_dirty() {
   local d=""
   local c=""
 
-  git diff --no-ext-diff --quiet 2>/dev/null || d="${ZSH_THEME_GIT_PROMPT_DIRTY=" *"}"
+  git diff --no-ext-diff --quiet 2>/dev/null || d=" ${ZSH_THEME_GIT_PROMPT_DIRTY="*"}"
   git diff --no-ext-diff --cached --quiet 2>/dev/null || c="${ZSH_THEME_GIT_PROMPT_STAGED="+"}"
 
-  [ ! -z "$d" ] || d="${ZSH_THEME_GIT_PROMPT_CLEAN=""}"
+  if [[ -z "$d$c" ]]; then
+    d="${ZSH_THEME_GIT_PROMPT_CLEAN=""}"
+  elif [[ -z "$d" ]]; then
+    d=" "
+  fi
 
-  echo "${d}${c}"
+  echo "$d$c"
 }
 
 __git_prompt() {
@@ -32,9 +36,9 @@ case `hostname -s | tr '[:upper:]' '[:lower:]'` in
 esac
 
 # Git prompt config
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{\e[38;5;8m%} "
+ZSH_THEME_GIT_PROMPT_PREFIX="%{\e[38;5;8m%} "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{\e[38;5;9m%} ✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{\e[38;5;9m%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[yellow]%}±%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" ✔"
 
