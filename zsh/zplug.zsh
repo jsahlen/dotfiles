@@ -1,3 +1,5 @@
+zplug "zplug/zplug"
+
 zplug "~/.zsh/vendor", \
   from:local, \
   use:"*.sh", \

@@ -1,7 +1,9 @@
 #!/bin/bash
 
 if [ ! -d $HOME/.zplug ]; then
-  git clone https://github.com/zplug/zplug $HOME/.zplug
+  mkdir -p $HOME/.zplug/repos/zplug
+  git clone https://github.com/zplug/zplug $HOME/.zplug/repos/zplug/zplug
+  ln -sf $HOME/.zplug/repos/zplug/zplug/init.zsh $HOME/.zplug/init.zsh
 fi
 
 if [ -d $HOME/.vim ] && [ ! -d $HOME/.vim/backup ]; then
