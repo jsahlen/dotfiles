@@ -48,4 +48,4 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -z "$SSH_CLIENT" ] && [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+[ -z "$TMUX" ] && [ -z "$SSH_CLIENT" ] && [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && echo "colors!" && eval "$($BASE16_SHELL/profile_helper.sh)"
