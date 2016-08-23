@@ -1,7 +1,7 @@
 # Load zplug
 if [[ -f $HOME/.zplug/init.zsh ]]; then
-  source $HOME/.zplug/init.zsh
   export ZPLUG_LOADFILE="$HOME/.zsh/zplug.zsh"
+  source $HOME/.zplug/init.zsh
 
   if ! zplug check --verbose; then
     printf "Install? [y/N]: "
