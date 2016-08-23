@@ -18,6 +18,11 @@ alias mkdir="nocorrect mkdir"
 alias mv="nocorrect mv"
 alias sudo="nocorrect sudo"
 
+# Directory shortcuts
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
 # Always use colors with `tree`
 hash tree &>/dev/null && alias tree="tree -C"
 
