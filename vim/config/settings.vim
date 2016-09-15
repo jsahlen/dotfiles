@@ -28,11 +28,15 @@ set laststatus=2                 " Always show the statusline
 set equalalways                  " Multiple windows, when created, are equal in size
 set colorcolumn=80               " Highlight the 80th column
 set lazyredraw                   " Lazy redraw for improved performance
-set breakindent                  " Indent wrapped code
+if (has('breakindent'))
+  set breakindent                " Indent wrapped code
+endif
 
 " NeoVim-specific config
 if has('nvim')
-  set termguicolors
+  if (has('termguicolors'))
+    set termguicolors
+  endif
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
