@@ -3,7 +3,11 @@ set encoding=utf-8
 syntax on                        " Enable syntax highlighting
 set t_Co=256                     " Use 256-color mode in terminals
 set background=dark              " Some plugins need to know this
-colorscheme base16-oceanicnext   " Default colorscheme
+
+" Colorscheme settings
+let g:oceanic_next_terminal_italic = 1
+let g:oceanic_next_terminal_bold = 1
+colorscheme OceanicNext          " Default colorscheme
 
 " Show comments as italic if terminal supports it
 if $TERM =~ "-italic"
