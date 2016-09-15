@@ -10,15 +10,6 @@ if [ -d $HOME/.vim ] && [ ! -d $HOME/.vim/backup ]; then
   mkdir -p $HOME/.vim/backup
 fi
 
-if [ ! -e $HOME/.config/base16-shell ]; then
-  read -p "Install base16-shell? [y/N]: " -n 1 -r install_base16_shell
-  echo
-  if [[ $install_base16_shell =~ ^[Yy]$ ]]; then
-    mkdir -p $HOME/.config
-    git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
-  fi
-fi
-
 if [ ! -f $HOME/.vim/autoload/plug.vim ]; then
   curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   vim -u $HOME/.vimrc.bundles +PlugInstall +qa
