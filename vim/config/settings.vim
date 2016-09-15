@@ -31,12 +31,12 @@ set lazyredraw                   " Lazy redraw for improved performance
 if (has('breakindent'))
   set breakindent                " Indent wrapped code
 endif
+if (has('termguicolors'))        " Use 24-bit colors, if available
+  set termguicolors
+endif
 
 " NeoVim-specific config
 if has('nvim')
-  if (has('termguicolors'))
-    set termguicolors
-  endif
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
