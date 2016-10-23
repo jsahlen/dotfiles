@@ -29,8 +29,6 @@ NEW_PATH="$NEW_PATH:$HOME/.bin" # user bin directory
 if [[ $OSTYPE == *darwin* ]]; then # homebrew
   NEW_PATH="$NEW_PATH:/usr/local/bin"
   NEW_PATH="$NEW_PATH:/usr/local/sbin"
-  NEW_PATH="$NEW_PATH:/usr/local/share/python"
-  NEW_PATH="$NEW_PATH:/usr/local/share/npm/bin"
 fi
 export PATH="$NEW_PATH:$PATH"
 
