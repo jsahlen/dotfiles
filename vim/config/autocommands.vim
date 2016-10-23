@@ -21,4 +21,12 @@ if has("autocmd")
   " Close help windows with just q
   au FileType HELP map <buffer> q :q<CR>
 
+  if exists(":terminal")
+    " Enter/exit insert mode automatically for :terminal buffers
+    au BufEnter,WinEnter term://* startinsert
+    au BufLeave term://* stopinsert
+    " Enable fugitive use in :terminal buffers
+    au TermOpen * call fugitive#detect(expand(getcwd()))
+  endif
+
 endif

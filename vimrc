@@ -14,6 +14,7 @@ filetype plugin indent on
 
 " .vimrc split into separate files
 source ~/.vim/config/autocommands.vim
+source ~/.vim/config/commands.vim
 source ~/.vim/config/mappings.vim
 source ~/.vim/config/plugins.vim
 source ~/.vim/config/settings.vim

@@ -140,3 +140,8 @@ if exists('g:plugs["neosnippet.vim"]')
   let g:neosnippet#enable_snipmate_compatibility = 1
   let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snipmate-snippets/snippets/'
 endif
+
+" neoterm
+if exists('g:plugs["neoterm"]')
+  nnoremap <silent> <leader>e :Ttoggle<CR>
+endif
