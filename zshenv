@@ -1,6 +1,9 @@
 # Skip global Zsh config
 setopt no_global_rcs
 
+# Terminfo path
+export TERMINFO="$HOME/.terminfo"
+
 # Load local completions
 fpath=(~/.zsh/completion $fpath)
 
