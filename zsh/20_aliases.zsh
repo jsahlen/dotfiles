@@ -36,3 +36,10 @@ alias ssh="TERM=xterm-256color ssh"
 if hash git &>/dev/null; then
   alias gst="git status"
 fi
+
+# Neovim Terminal Helpers
+if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+  alias h='nvr -o'
+  alias v='nvr -O'
+  alias t='nvr --remote-tab'
+fi
