@@ -16,7 +16,7 @@ if has("autocmd")
 
   " These files are also Markdown
   au BufRead,BufNewFile *.{md,mdown,mkd,mkdn} set ft=markdown
-  au FileType markdown noremap <F5> :!open -a "Google Chrome" %<CR>
+  au FileType markdown noremap <silent> <F5> :silent !open -a "Google Chrome" "%"<CR>
 
   " Close help windows with just q
   au FileType HELP map <buffer> q :q<CR>
