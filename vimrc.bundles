@@ -54,10 +54,10 @@ if has('nvim')
   Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
 end
 " Vim.org bundles
-Plug 'gitignore'
-Plug 'IndexedSearch'
-Plug 'L9'
-Plug 'matchit.zip'
+Plug 'vim-scripts/gitignore'
+Plug 'vim-scripts/IndexedSearch'
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/matchit.zip'
 
 
 " End Vim-Plug config
