@@ -25,6 +25,7 @@ export EDITOR="vim"
 NEW_PATH=""
 NEW_PATH="$NEW_PATH:./bin" # local directory
 NEW_PATH="$NEW_PATH:./node_modules/.bin" # local npm bin directory
+NEW_PATH="$NEW_PATH:$HOME/.zplug/bin" # zplug bin directory
 NEW_PATH="$NEW_PATH:$HOME/.bin" # user bin directory
 if [[ $OSTYPE == *darwin* ]]; then # homebrew
   NEW_PATH="$NEW_PATH:/usr/local/bin"

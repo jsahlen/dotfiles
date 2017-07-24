@@ -15,3 +15,4 @@ zplug "jsahlen/nodenv.plugin.zsh"
 zplug "jsahlen/rbenv.plugin.zsh"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", defer:2
+zplug "dokku/dokku", as:command, use:"contrib/dokku_client.sh", rename-to:dokku
