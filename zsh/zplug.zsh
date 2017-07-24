@@ -1,4 +1,4 @@
-zplug "zplug/zplug"
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 zplug "~/.zsh/vendor", \
   from:local, \
