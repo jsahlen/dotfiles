@@ -58,3 +58,4 @@ for fzfdir in "${fzfdirs[@]}"; do
 done
 unset fzfdirs fzfdir
 export FZF_DIR
+[ ! -z $FZF_DIR ] && export PATH="$FZF_DIR/bin:$PATH"
