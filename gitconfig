@@ -19,6 +19,7 @@
 [user]
 	name = Johan Sahlén
 	email = johan@monospace.se
+	signingkey = 0x70B0EDCDF854AC45
 [alias]
 	co = checkout
 	branches = branch
