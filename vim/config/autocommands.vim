@@ -1,4 +1,25 @@
+function s:AdjustColorScheme()
+  " Use terminal emulator's background color
+  hi Normal ctermbg=NONE guibg=NONE
+
+  " Don't underline the cursor line
+  hi CursorLine term=NONE cterm=NONE
+
+  " Show comments as italic if terminal supports it
+  if $TERM =~ "-italic"
+    hi Comment cterm=italic gui=italic
+  endif
+
+  " base16-brewer-light
+  if g:colors_name == "base16-brewer"
+    hi EndOfBuffer guifg=#fcfdfe ctermfg=00
+  endif
+endfunction
+
 if has("autocmd")
+
+  " Do some adjustments to the colorscheme
+  au ColorScheme * call s:AdjustColorScheme()
 
   " Remember last location in file, but not for commit messages.
   au BufReadPost * if &filetype !~ 'commit\c' && line("'\"") > 0 && line("'\"") <= line("$")
@@ -20,13 +41,5 @@ if has("autocmd")
 
   " Close help windows with just q
   au FileType HELP map <buffer> q :q<CR>
-
-  if exists(":terminal")
-    " Enter/exit insert mode automatically for :terminal buffers
-    au BufEnter,WinEnter term://* startinsert
-    au BufLeave term://* stopinsert
-    " Enable fugitive use in :terminal buffers
-    au TermOpen * call fugitive#detect(expand(getcwd()))
-  endif
 
 endif

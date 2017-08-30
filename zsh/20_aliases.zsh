@@ -17,6 +17,8 @@ alias cp="nocorrect cp"
 alias mkdir="nocorrect mkdir"
 alias mv="nocorrect mv"
 alias sudo="nocorrect sudo"
+alias git="nocorrect git"
+alias npm="nocorrect npm"
 
 # Directory shortcuts
 alias ...="cd ../.."
@@ -26,9 +28,6 @@ alias .....="cd ../../../.."
 # Always use colors with `tree`
 hash tree &>/dev/null && alias tree="tree -C"
 
-# Alias Neovim as `vim`
-hash nvim &>/dev/null && alias vim="nvim"
-
 # Reset $TERM when ssh'ing
 alias ssh="TERM=xterm-256color ssh"
 
@@ -37,9 +36,10 @@ if hash git &>/dev/null; then
   alias gst="git status"
 fi
 
-# Neovim Terminal Helpers
-if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
-  alias h='nvr -o'
-  alias v='nvr -O'
-  alias t='nvr --remote-tab'
+# Tmux/Vim Helpers
+if [ -n "${TMUX}" ]; then
+  alias e=tmux-vim-edit
+  alias t=tmux-vim-tabedit
+  alias h=tmux-vim-split
+  alias v=tmux-vim-vsplit
 fi

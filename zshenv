@@ -48,3 +48,15 @@ export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 
 # homebrew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# fzf directory
+FOUND_FZF_DIR=0
+FZF_DIR=""
+fzfdirs=("$HOME/.local/fzf" "$HOME/.fzf" "/usr/local/opt/fzf" "/opt/fzf")
+for fzfdir in "${fzfdirs[@]}"; do
+  if [ -d $fzfdir -a -z $FZF_DIR ]; then
+    FZF_DIR="$fzfdir"
+  fi
+done
+unset fzfdirs fzfdir
+export FZF_DIR

@@ -11,8 +11,17 @@ zplug "~/.zsh", \
   use:"<->_*.zsh", \
   defer:1
 
+if [ -d "$FZF_DIR" ]; then
+  zplug "$FZF_DIR", \
+    from:local, \
+    use:"shell/*.zsh"
+else
+  echo "FZF_DIR ($FZF_DIR) not found."
+fi
+
 zplug "jsahlen/nodenv.plugin.zsh"
 zplug "jsahlen/rbenv.plugin.zsh"
+zplug "jsahlen/tmux-vim-integration.plugin.zsh"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "dokku/dokku", as:command, use:"contrib/dokku_client.sh", rename-to:dokku

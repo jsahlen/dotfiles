@@ -86,11 +86,5 @@ cmap w!! %!sudo tee > /dev/null %
 " Stop the stupid window from popping up
 map q: :q
 
-" Double Esc to exit Terminal mode in NeoVim
-if exists(":terminal")
-  tnoremap <Esc><Esc> <C-\><C-n>
-  tnoremap <silent> <C-h> <C-\><C-n>:stopinsert<CR>:wincmd h<CR>
-  tnoremap <silent> <C-j> <C-\><C-n>:stopinsert<CR>:wincmd j<CR>
-  tnoremap <silent> <C-k> <C-\><C-n>:stopinsert<CR>:wincmd k<CR>
-  tnoremap <silent> <C-l> <C-\><C-n>:stopinsert<CR>:wincmd l<CR>
-endif
+" Toggle checkboxes in markdown
+nmap <silent> <leader>x :ToggleCheckbox<CR>

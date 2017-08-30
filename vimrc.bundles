@@ -7,16 +7,17 @@ call plug#begin('~/.vim/bundle')
 
 " My own bundles
 Plug 'jsahlen/vim-snipmate-snippets'
-Plug 'jsahlen/vim-tomorrow-theme'
+
 " GitHub bundles
 Plug '907th/vim-auto-save'
+Plug 'ap/vim-css-color'
+Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'kassio/neoterm'
+Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'maralla/completor-neosnippet'
+Plug 'maralla/completor.vim', { 'do': 'make js' }
 Plug 'matze/vim-move'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'mhartington/oceanic-next'
@@ -24,9 +25,11 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/yajs.vim'
-Plug 'rking/ag.vim'
+Plug 'plasticboy/vim-markdown', { 'as': 'vim-markdown-extensions' }
+Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'sjl/vitality.vim'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -35,24 +38,22 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'triglav/vim-visual-increment'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
+Plug 'w0rp/ale'
 Plug 'xenoterracide/html.vim'
-" NeoVim-specific bundles
-if has('nvim')
-  Plug 'benekastah/neomake'
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
-end
+
+" fzf, if installed
+if isdirectory($FZF_DIR)
+  Plug $FZF_DIR
+  Plug 'junegunn/fzf.vim'
+endif
+
 " Vim.org bundles
 Plug 'vim-scripts/gitignore'
 Plug 'vim-scripts/IndexedSearch'

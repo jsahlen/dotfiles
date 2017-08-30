@@ -1,32 +1,3 @@
-" Neomake
-if exists('g:plugs["neomake"]')
-  let g:neomake_javascript_enabled_makers = ['eslint']
-  autocmd! BufWritePost,BufEnter * Neomake
-endif
-
-
-" CtrlP
-if exists('g:plugs["ctrlp.vim"]')
-  let g:ctrlp_map = '<leader>t'
-  let g:ctrlp_cmd = 'CtrlP'
-  nmap <silent> <leader>T :CtrlPCurFile<CR>
-  nmap <silent> <leader>b :CtrlPBuffer<CR>
-  nmap <silent> <leader>c :CtrlPTag<CR>
-
-  let g:ctrlp_root_markers = ['Gemfile', '*.csproj', 'package.json']
-  let g:ctrlp_match_window_bottom = 0
-  let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules)$',
-    \ 'file': '\v\.(png|jpg|gif|psd)$'
-  \ }
-
-  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-endif
-
-
 " yankstack
 if exists('g:plugs["vim-yankstack"]')
   let g:yankstack_map_keys = 0
@@ -67,58 +38,8 @@ if exists('g:plugs["vim-airline"]')
 endif
 
 
-" base16 colorscheme
-if !has("nvim")
-  let base16colorspace=256
-endif
-
-" Deoplete + Neosnippet
-if exists('g:plugs["deoplete.nvim"]') && exists('g:plugs["neosnippet.vim"]')
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#disable_auto_complete = 1
-  if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-  endif
-
-  autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-  imap <silent><expr><Tab>
-     \ pumvisible() ? "\<C-n>"
-     \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
-     \ : (<SID>is_whitespace() ? "\<Tab>"
-     \ : deoplete#mappings#manual_complete()))
-
-  smap <silent><expr><Tab>
-     \ pumvisible() ? "\<C-n>"
-     \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
-     \ : (<SID>is_whitespace() ? "\<Tab>"
-     \ : deoplete#mappings#manual_complete()))
-
-  inoremap <expr><S-Tab>
-         \ pumvisible() ? "\<C-p>" : "\<C-h>"
-
-  function! s:is_whitespace() "{{{
-    let col = col('.') - 1
-    return ! col || getline('.')[col - 1] =~? '\s'
-  endfunction "}}}
-
-  inoremap <expr><BS>
-         \ deoplete#mappings#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-g>
-         \ deoplete#mappings#undo_completion()
-
-  augroup omnifuncs
-    autocmd!
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-  augroup end
-endif
-
 " tern
-if exists('g:plugs["tern_for_vim"]') || exists('g:plugs["deoplete-ternjs"]')
+if exists('g:plugs["tern_for_vim"]')
   let g:tern_request_timeout = 1
   let g:tern_show_argument_hints = 'on_hold'
   let g:tern_show_signature_in_pum = 1
@@ -132,6 +53,7 @@ if exists('g:plugs["tern_for_vim"]') || exists('g:plugs["deoplete-ternjs"]')
   nnoremap <silent> tr :TernRefs<CR>
 endif
 
+
 " Neosnippets
 if exists('g:plugs["neosnippet.vim"]')
   let g:neosnippet#disable_runtime_snippets = {
@@ -141,7 +63,91 @@ if exists('g:plugs["neosnippet.vim"]')
   let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snipmate-snippets/snippets/'
 endif
 
+
 " neoterm
 if exists('g:plugs["neoterm"]')
   nnoremap <silent> <leader>e :Ttoggle<CR>
+endif
+
+
+" Vimux
+if exists('g:plugs["vimux"]')
+  function! VimuxToggleRunner()
+    if exists("g:VimuxRunnerIndex")
+      call VimuxCloseRunner()
+    else
+      call VimuxOpenRunner()
+    endif
+  endfunction
+  nnoremap <silent> <leader>e :call VimuxToggleRunner()<CR>
+endif
+
+
+" completor.vim
+if exists('g:plugs["completor.vim"]')
+  let g:completor_auto_trigger=0
+endif
+
+
+" completor.vim + Neosnippet
+if exists('g:plugs["completor.vim"]') && exists('g:plugs["neosnippet.vim"]')
+  imap <silent><expr><Tab>
+     \ pumvisible() ? "\<C-n>"
+     \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
+     \ : (<SID>is_whitespace() ? "\<Tab>"
+     \ : "\<C-x>\<C-u>\<C-p>"))
+
+  smap <silent><expr><Tab>
+     \ pumvisible() ? "\<C-n>"
+     \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
+     \ : (<SID>is_whitespace() ? "\<Tab>"
+     \ : "\<C-x>\<C-u>\<C-p>"))
+
+  imap <expr><S-Tab>
+         \ pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  " vim-endwise interferes with our <CR> mapping
+  if exists('g:plugs["vim-endwise"]')
+    let g:endwise_no_mappings=1
+    imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>\<Plug>DiscretionaryEnd"
+  else
+    imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+  endif
+
+  function! s:is_whitespace() "{{{
+    let col = col('.') - 1
+    return ! col || getline('.')[col - 1] =~? '\s'
+  endfunction "}}}
+endif
+
+
+" fzf
+if exists('g:plugs["fzf.vim"]')
+  let g:fzf_prefer_tmux = 1
+  let g:fzf_layout = { 'down': '~40%' }
+
+  nmap <silent> <leader>t :Files<CR>
+  nmap <silent> <leader>b :Buffers<CR>
+  nmap <silent> <leader>c :Tags<CR>
+endif
+
+
+" ALE
+if exists('g:plugs["ale"]')
+  let g:ale_sign_column_always = 1
+  let g:ale_sign_error = "✖"
+  let g:ale_sign_warning = "⚠︎"
+
+  let g:ale_linters = {
+  \  'html': [],
+  \}
+
+  if exists('g:plugs["vim-airline"]')
+    let g:airline#extensions#ale#enabled = 1
+  endif
+endif
+
+" vim-markdown
+if exists('g:plugs["vim-markdown-extensions"]')
+  let g:vim_markdown_folding_disabled = 1
 endif
