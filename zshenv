@@ -59,3 +59,6 @@ done
 unset fzfdirs fzfdir
 export FZF_DIR
 [ ! -z $FZF_DIR ] && export PATH="$FZF_DIR/bin:$PATH"
+
+# load local zshenv
+[ -f "$HOME/.zshenv.local" ] && source "$HOME/.zshenv.local"
