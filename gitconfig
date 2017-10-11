@@ -24,7 +24,6 @@
 	co = checkout
 	branches = branch
 	log = log --date=local
-	wtf = !git-wtf
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 [core]
 	excludesfile = ~/.gitignore
@@ -36,4 +35,4 @@
 [status]
 	short = 1
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
