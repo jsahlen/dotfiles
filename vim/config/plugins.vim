@@ -148,6 +148,11 @@ if exists('g:plugs["ale"]')
 endif
 
 " vim-markdown
-if exists('g:plugs["vim-markdown-extensions"]')
-  let g:vim_markdown_folding_disabled = 1
+if exists('g:plugs["vim-markdown"]')
+  let g:markdown_enable_spell_checking = 0
+endif
+
+" vim-jsx
+if exists('g:plugs["vim-jsx"]')
+  let g:jsx_ext_required = 0
 endif
