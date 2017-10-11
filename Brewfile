@@ -43,6 +43,7 @@ brew "vim"
 brew "wget"
 brew "zsh"
 
+cask "adobe-creative-cloud"
 cask "1password"
 cask "alfred"
 cask "android-file-transfer"
