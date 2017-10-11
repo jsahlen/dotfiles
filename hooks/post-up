@@ -14,15 +14,3 @@ if [ ! -f $HOME/.vim/autoload/plug.vim ]; then
   curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   vim -u $HOME/.vimrc.bundles +PlugInstall +qa
 fi
-
-if [[ $OSTYPE == darwin* ]]; then
-  for pref_source in $(pwd)/Preferences/*; do
-    pref_base=$(basename "${pref_source}")
-    pref_dest="$HOME/Library/Preferences/${pref_base}"
-    if [ ! -f "${pref_dest}" ]; then
-      ln "${pref_source}" "${pref_dest}"
-    else
-      echo "Skipping ${pref_base}; already exists."
-    fi
-  done
-fi
