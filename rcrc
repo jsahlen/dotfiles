@@ -1,2 +1,2 @@
 COPY_ALWAYS="rcrc"
-EXCLUDES="rcrc README.md terminfo Brewfile"
+EXCLUDES="rcrc README.md terminfo"
