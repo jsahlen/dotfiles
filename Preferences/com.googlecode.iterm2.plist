@@ -16810,11 +16810,11 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1546 699 400 129 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 494 620 392 0 0 1680 1050 </string>
+	<string>970 787 620 392 0 0 2560 1440 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1668 110 796 473 0 0 2560 1440 </string>
+	<string>1513 174 796 473 0 0 2560 1440 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>653 228 592 584 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -18623,7 +18623,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>~/.dotfiles/preferences/</string>
+	<string>~/.dotfiles/Preferences/</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -18647,7 +18647,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-09T10:41:45Z</date>
+	<date>2017-10-11T09:59:20Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

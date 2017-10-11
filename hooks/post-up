@@ -16,7 +16,7 @@ if [ ! -f $HOME/.vim/autoload/plug.vim ]; then
 fi
 
 if [[ $OSTYPE == darwin* ]]; then
-  for pref_source in $(pwd)/preferences/*; do
+  for pref_source in $(pwd)/Preferences/*; do
     pref_base=$(basename "${pref_source}")
     pref_dest="$HOME/Library/Preferences/${pref_base}"
     if [ ! -f "${pref_dest}" ]; then
