@@ -32,7 +32,7 @@ case `hostname -s | tr '[:upper:]' '[:lower:]'` in
   tallest)     PROMPT_COLOR=$fg_bold[red]     ;;
   minimoose)   PROMPT_COLOR=$fg_bold[magenta] ;;
   mortos)      PROMPT_COLOR=$fg_bold[green]   ;;
-  lemongrab)   PROMPT_COLOR=$fg_bold[yellow]  ;;
+  iggins)      PROMPT_COLOR=$fg_bold[blue]    ;;
 esac
 
 # Git prompt config
