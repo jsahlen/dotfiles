@@ -40,6 +40,7 @@ brew "tmux"
 brew "tree"
 brew "vim"
 brew "wget"
+brew "ykman"
 brew "zsh"
 
 cask "adobe-creative-cloud"
