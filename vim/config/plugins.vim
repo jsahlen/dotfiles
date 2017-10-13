@@ -95,13 +95,13 @@ if exists('g:plugs["completor.vim"]') && exists('g:plugs["neosnippet.vim"]')
      \ pumvisible() ? "\<C-n>"
      \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
      \ : (<SID>is_whitespace() ? "\<Tab>"
-     \ : "\<C-x>\<C-u>\<C-p>"))
+     \ : "<C-R>=completor#do('complete')<CR>"))
 
   smap <silent><expr><Tab>
      \ pumvisible() ? "\<C-n>"
      \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
      \ : (<SID>is_whitespace() ? "\<Tab>"
-     \ : "\<C-x>\<C-u>\<C-p>"))
+     \ : "<C-R>=completor#do('complete')<CR>"))
 
   imap <expr><S-Tab>
          \ pumvisible() ? "\<C-p>" : "\<C-h>"
