@@ -1,3 +1,6 @@
+# emacs mode by default
+bindkey -e
+
 # History substring search
 zmodload zsh/terminfo
 bindkey '\e[A' history-substring-search-up
