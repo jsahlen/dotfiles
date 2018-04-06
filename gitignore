@@ -4,3 +4,4 @@
 .node-version
 .tern-port
 .envrc
+.procfile.local
