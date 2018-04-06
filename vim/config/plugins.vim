@@ -156,3 +156,19 @@ endif
 if exists('g:plugs["vim-jsx"]')
   let g:jsx_ext_required = 0
 endif
+
+" ack.vim
+if exists('g:plugs["ack.vim"]')
+  let g:ackprg = 'ag --vimgrep'
+  cnoreabbrev Ag Ack!
+  cnoreabbrev Ack Ack!
+  nnoremap <Leader>a :Ack!<Space>
+  let g:ackhighlight = 1
+  let g:ack_mappings = {
+  \  '<C-t>': '<C-W><CR><C-W>T',
+  \  '<C-x>': '<C-W><CR><C-W>K',
+  \  '<C-v>': '<C-W><CR><C-W>H<C-W>b<C-W>J<C-W>t',
+  \  'L': ':tabnext<CR>',
+  \  'H': ':tabprev<CR>'
+  \}
+endif

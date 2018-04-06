@@ -22,6 +22,7 @@ Plug 'maralla/completor.vim', { 'do': 'make js' }
 Plug 'matze/vim-move'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'mhartington/oceanic-next'
+Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
