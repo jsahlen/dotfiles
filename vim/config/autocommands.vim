@@ -1,4 +1,6 @@
 function s:AdjustColorScheme()
+  let g:colors_name = get(g:, "colors_name", "")
+
   " Use terminal emulator's background color
   hi Normal ctermbg=NONE guibg=NONE
 
