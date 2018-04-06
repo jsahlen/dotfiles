@@ -14,7 +14,8 @@ zplug "~/.zsh", \
 if [ -d "$FZF_DIR" ]; then
   zplug "$FZF_DIR", \
     from:local, \
-    use:"shell/*.zsh"
+    use:"shell/*.zsh", \
+    defer:2
 else
   echo "FZF_DIR ($FZF_DIR) not found."
 fi
