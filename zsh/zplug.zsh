@@ -25,3 +25,4 @@ zplug "jsahlen/tmux-vim-integration.plugin.zsh"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "dokku/dokku", as:command, use:"contrib/dokku_client.sh", rename-to:dokku
+zplug "direnv/direnv", as:command, from:gh-r, rename-to:direnv
