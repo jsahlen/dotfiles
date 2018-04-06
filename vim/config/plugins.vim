@@ -126,9 +126,9 @@ if exists('g:plugs["fzf.vim"]')
   let g:fzf_prefer_tmux = 1
   let g:fzf_layout = { 'down': '~40%' }
 
+  nmap <silent> ;         :Buffers<CR>
   nmap <silent> <leader>t :Files<CR>
-  nmap <silent> <leader>b :Buffers<CR>
-  nmap <silent> <leader>c :Tags<CR>
+  nmap <silent> <leader>r :Tags<CR>
 endif
 
 
