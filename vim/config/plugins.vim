@@ -172,3 +172,9 @@ if exists('g:plugs["ack.vim"]')
   \  'H': ':tabprev<CR>'
   \}
 endif
+
+" vim-bufkill
+if exists('g:plugs["vim-bufkill"]')
+  let g:BufKillCreateMappings = 0
+  nnoremap <silent> <Leader>w :BD<CR>
+endif
