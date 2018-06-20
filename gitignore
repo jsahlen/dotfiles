@@ -5,3 +5,4 @@
 .tern-port
 .envrc
 .procfile.local
+.ignore
