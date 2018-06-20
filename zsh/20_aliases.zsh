@@ -36,6 +36,9 @@ if hash git &>/dev/null; then
   alias gst="git status"
 fi
 
+# Ruby
+alias be="bundle exec"
+
 # Tmux/Vim Helpers
 if [ -n "${TMUX}" ]; then
   alias e=tmux-vim-edit
