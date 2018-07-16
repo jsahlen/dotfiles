@@ -20,6 +20,7 @@ else
   echo "FZF_DIR ($FZF_DIR) not found."
 fi
 
+zplug "docker/compose", use:"contrib/completion/zsh"
 zplug "jsahlen/nodenv.plugin.zsh"
 zplug "jsahlen/rbenv.plugin.zsh"
 zplug "jsahlen/tmux-vim-integration.plugin.zsh"
