@@ -1,37 +1,61 @@
-#!/usr/bin/ruby
+#!/bin/bash
 
-require 'fileutils'
+SOURCE=""
+DESTINATION=""
+MODE="775"
+LINK_COPY="-l"
 
-MRLS_VERSION = "0.1"
+help () {
+  echo "Usage: $0 [-h] [-m MODE] [-L] SOURCE DESTINATION"
+  echo "  -h       Display this help"
+  echo "  -m MODE  Mode for the new directory (if one is created); 775 by default"
+  echo "  -L       Do not hard link files; straight up copy instead"
+  echo
+}
 
-unless ARGV[0] && ARGV[1]
-  script = File.basename($0)
-  puts "Move Release v#{MRLS_VERSION}"
-  puts "usage:	#{script} source target"
-  puts ""
-  exit
-end
+while getopts 'hm:L' flag; do
+  case "${flag}" in
+    h)
+      help
+      exit 0
+      ;;
+    m)
+      MODE="$OPTARG"
+      ;;
+    L)
+      LINK_COPY=""
+      ;;
+    \?)
+      echo
+      help
+      exit 1
+      ;;
+    :)
+      echo
+      help
+      exit 1
+      ;;
+  esac
+done
 
-unrar = '/usr/bin/unrar'
+shift $((OPTIND-1))
 
-source_path = File.expand_path(ARGV[0])
-release_name = source_path.sub(/^.*\/([^\/]+)\/[^\/]+$/, '\1')
-target_path  = File.expand_path(ARGV[1])
+SOURCE="$1"
+DESTINATION="$2"
 
-filename = File.basename(source_path)
-ext      = filename.sub(/^.*\.([^\.]+)$/, '\1')
+if [ -z "$SOURCE" ] || [ -z "$DESTINATION" ]; then
+  help
+  exit 1
+fi
 
-target_filename = "#{release_name}.#{ext}"
+if [ -f "${SOURCE}" ]; then
+  source_basename="${SOURCE%.*}"
+  source_dir="${source_basename##*/}"
+  DESTINATION="${DESTINATION}/${source_dir}/"
 
-unless File.file? source_path
-  puts "Error! File not found", ""
-  exit
-end
+  mkdir -p -m $MODE "${DESTINATION}"
+fi
 
-if File.directory? target_path
-  puts "Moving #{filename} as #{target_filename}"
-  FileUtils.mv source_path, File.join(target_path, target_filename)
-else
-  FileUtils.mv source_path, target_path
-end
+cp -r $LINK_COPY "${SOURCE}" "${DESTINATION}"
 
+exit 0
