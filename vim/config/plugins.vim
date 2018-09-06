@@ -169,7 +169,6 @@ if exists('g:plugs["ack.vim"]')
   cnoreabbrev Ag Ack!
   cnoreabbrev Ack Ack!
   nnoremap <Leader>a :Ack!<Space>
-  let g:ackhighlight = 1
   let g:ack_mappings = {
   \  '<C-t>': '<C-W><CR><C-W>T',
   \  '<C-x>': '<C-W><CR><C-W>K',
