@@ -6,3 +6,4 @@
 .envrc
 .procfile.local
 .ignore
+.foreman
