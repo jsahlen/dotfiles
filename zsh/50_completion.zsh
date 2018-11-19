@@ -1,6 +1,9 @@
 # Completion style
 zstyle ':completion:*:default' menu select=1
 
+# Sudo
+zstyle ':completion:*:sudo::' environ PATH="/sbin:/usr/sbin:$PATH" HOME="/root"
+
 # Completing misc
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' verbose yes
