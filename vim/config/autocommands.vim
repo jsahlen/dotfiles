@@ -12,6 +12,17 @@ function s:AdjustColorScheme()
     hi Comment cterm=italic gui=italic
   endif
 
+  " ALE Highlights
+  if exists('g:plugs["ale"]')
+    highlight ALEError cterm=undercurl ctermbg=1 ctermfg=0
+    highlight ALEWarning cterm=undercurl
+  endif
+
+  " vim-matchup Highlights
+  if exists('g:plugs["vim-matchup"]')
+    highlight MatchParen ctermbg=8
+  endif
+
   " base16-brewer-light
   if g:colors_name == "base16-brewer"
     hi EndOfBuffer guifg=#fcfdfe ctermfg=00
@@ -43,5 +54,9 @@ if has("autocmd")
 
   " Close help windows with just q
   au FileType HELP map <buffer> q :q<CR>
+
+  " FZF
+  au FileType fzf set laststatus=0 noshowmode noruler signcolumn=no
+     \| au BufLeave <buffer> set laststatus=2 showmode ruler
 
 endif

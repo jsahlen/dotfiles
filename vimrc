@@ -2,7 +2,6 @@ set nocompatible
 let mapleader = ","
 let maplocalleader = mapleader
 
-
 " NeoBundle for plugin management
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles

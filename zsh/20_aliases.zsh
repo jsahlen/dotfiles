@@ -46,3 +46,8 @@ if [ -n "${TMUX}" ]; then
   alias h=tmux-vim-split
   alias v=tmux-vim-vsplit
 fi
+
+# Neovim
+if hash nvim &>/dev/null; then
+  alias vim="nvim"
+fi

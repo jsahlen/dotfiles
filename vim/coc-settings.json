@@ -1,0 +1,11 @@
+{
+  "coc.preferences.diagnostic.errorSign": "✖",
+  "coc.preferences.diagnostic.warningSign": "▲",
+  "coc.preferences.diagnostic.infoSign": "𝐢",
+  "coc.preferences.diagnostic.hintSign": "•",
+  "snippets.extends": {
+    "javascriptreact": ["javascript"]
+  },
+  "solargraph.useBundler": false,
+  "solargraph.commandPath": "/usr/local/opt/rbenv/versions/2.3.7/bin/solargraph"
+}

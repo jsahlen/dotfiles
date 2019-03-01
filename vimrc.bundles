@@ -5,32 +5,33 @@ endif
 " Initialize Vim-Plug
 call plug#begin('~/.vim/bundle')
 
-" My own bundles
-Plug 'jsahlen/vim-snipmate-snippets'
-
 " GitHub bundles
+Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': 'yarn install' }
+Plug 'SirVer/ultisnips'
 Plug '907th/vim-auto-save'
-Plug 'ap/vim-css-color'
-Plug 'benmills/vimux'
+Plug 'andymass/vim-matchup'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dyng/ctrlsf.vim'
-Plug 'gabrielelana/vim-markdown'
+Plug 'Galooshi/vim-import-js', { 'for': 'javascript', 'do': 'npm install -g import-js' }
+Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
 Plug 'junegunn/goyo.vim'
-Plug 'maralla/completor-neosnippet'
-Plug 'maralla/completor.vim', { 'do': 'make js' }
 Plug 'matze/vim-move'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'mhartington/oceanic-next'
-Plug 'mileszs/ack.vim'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'mxw/vim-jsx'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/yajs.vim'
+Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+Plug 'mmalecki/vim-node.js', { 'for': 'javascript' }
+Plug 'moll/vim-node', { 'for': 'javascript' }
+Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars', 'html.mustache'] }
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
+Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'qpkorr/vim-bufkill'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neosnippet.vim'
+Plug 'rhysd/clever-f.vim'
 Plug 'sjl/vitality.vim'
+Plug 'SpaceVim/vim-markdown', { 'for': 'markdown' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
@@ -45,9 +46,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'w0rp/ale'
-Plug 'xenoterracide/html.vim'
 
 " fzf, if installed
 if isdirectory($FZF_DIR)
@@ -59,7 +59,6 @@ endif
 Plug 'vim-scripts/gitignore'
 Plug 'vim-scripts/IndexedSearch'
 Plug 'vim-scripts/L9'
-Plug 'vim-scripts/matchit.zip'
 
 
 " End Vim-Plug config

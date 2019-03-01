@@ -5,7 +5,3 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
 
   zplug load
 fi
-
-if [[ -f $HOME/.zshrc.local ]]; then
-  source $HOME/.zshrc.local
-fi
