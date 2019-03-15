@@ -29,7 +29,9 @@ set colorcolumn=80               " Highlight the 80th column
 set lazyredraw                   " Lazy redraw for improved performance
 set novisualbell                 " Disable visual (flashing) bell
 set breakindent                  " Indent wrapped code
-set signcolumn=yes               " Always show sign column
+if exists("&signcolumn")
+  set signcolumn=yes             " Always show sign column
+endif
 set shortmess+=c                 " don't give |ins-completion-menu| messages.
 set updatetime=300               " Smaller updatetime for CursorHold & CursorHoldI
 if (has('termguicolors'))        " Use 24-bit colors, if available
