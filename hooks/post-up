@@ -15,7 +15,7 @@ if [ ! -f $HOME/.vim/autoload/plug.vim ]; then
   vim -u $HOME/.vimrc.bundles +PlugInstall +qa
 fi
 
-if hash bat &>/dev/null && [ ! -d $(bat --config-dir)/themes/oceanic-next-color-scheme ]; then
-	curl -fLo $(bat --config-dir)/themes/"Oceanic Next.tmTheme" --create-dirs https://raw.githubusercontent.com/voronianski/oceanic-next-color-scheme/master/Oceanic%20Next.tmTheme
-	bat cache --build
+if hash bat &>/dev/null && [ ! -f "$(bat --config-dir)/themes/Oceanic Next.tmTheme" ]; then
+  curl -fLo "$(bat --config-dir)/themes/Oceanic Next.tmTheme" --create-dirs https://raw.githubusercontent.com/voronianski/oceanic-next-color-scheme/master/Oceanic%20Next.tmTheme
+  bat cache --build
 fi
