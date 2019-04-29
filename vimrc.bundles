@@ -6,8 +6,6 @@ endif
 call plug#begin('~/.vim/bundle')
 
 " GitHub bundles
-Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': 'yarn install' }
-Plug 'SirVer/ultisnips'
 Plug '907th/vim-auto-save'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -29,6 +27,7 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'qpkorr/vim-bufkill'
 Plug 'rhysd/clever-f.vim'
+Plug 'SirVer/ultisnips'
 Plug 'sjl/vitality.vim'
 Plug 'SpaceVim/vim-markdown', { 'for': 'markdown' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
@@ -46,7 +45,18 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'w0rp/ale'
+
+if has("nvim")
+  Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': 'yarn install' }
+  Plug 'neoclide/coc-eslint', { 'do': 'yarn install' }
+  Plug 'neoclide/coc-highlight', { 'do': 'yarn install' }
+  Plug 'neoclide/coc-snippets', { 'do': 'yarn install' }
+  Plug 'neoclide/coc-css', { 'do': 'yarn install' }
+  Plug 'neoclide/coc-html', { 'do': 'yarn install' }
+  Plug 'neoclide/coc-json', { 'do': 'yarn install' }
+  Plug 'neoclide/coc-solargraph', { 'do': 'yarn install' }
+  Plug 'neoclide/coc-tsserver', { 'do': 'yarn install' }
+endif
 
 " fzf, if installed
 if isdirectory($FZF_DIR)
