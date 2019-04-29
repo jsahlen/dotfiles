@@ -73,4 +73,7 @@ if has("autocmd")
   " Grepper
   au FileType GrepperSide setlocal signcolumn=no
 
+  " Peekaboo
+  au FileType peekaboo set signcolumn=no
+
 endif

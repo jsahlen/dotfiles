@@ -14,6 +14,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Galooshi/vim-import-js', { 'for': 'javascript', 'do': 'npm install -g import-js' }
 Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'matze/vim-move'
 Plug 'mhartington/oceanic-next'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
