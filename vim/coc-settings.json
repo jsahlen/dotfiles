@@ -1,8 +1,8 @@
 {
-  "coc.preferences.diagnostic.errorSign": "✖",
-  "coc.preferences.diagnostic.warningSign": "▲",
-  "coc.preferences.diagnostic.infoSign": "𝐢",
-  "coc.preferences.diagnostic.hintSign": "•",
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "▲",
+  "diagnostic.infoSign": "𝐢",
+  "diagnostic.hintSign": "•",
   "snippets.extends": {
     "javascriptreact": ["javascript"]
   },

@@ -23,6 +23,17 @@ function s:AdjustColorScheme()
     highlight MatchParen ctermbg=8
   endif
 
+  " coc.nvim signs
+  if exists('g:plugs["coc.nvim"]')
+    highlight clear CocErrorSign
+    highlight clear CocWarningSign
+    highlight clear CocInfoSign
+    highlight clear CocHintSign
+    highlight link CocErrorSign ALEErrorSign
+    highlight link CocWarningSign ALEWarningSign
+    highlight link CocInfoSign ALEInfoSign
+  endif
+
   " base16-brewer-light
   if g:colors_name == "base16-brewer"
     hi EndOfBuffer guifg=#fcfdfe ctermfg=00
