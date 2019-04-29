@@ -179,9 +179,27 @@ endif
 
 " Grepper
 if exists('g:plugs["vim-grepper"]')
+  function s:open_side_window()
+    let s:winnr = bufwinnr('grepper-results')
+    if (s:winnr >= 0)
+      " execute s:winnr . 'wincmd w'
+      execute 'silent! normal ggdG'
+    else
+      vnew grepper-results
+    endif
+  endfunction
+
   let g:grepper = {}
-  let g:grepper.simple_prompt = 1
-  nnoremap <silent> <Leader>A :Grepper -tool rg -side -prompt<CR>
+  let g:grepper.dir = 'repo,cwd'
+  let g:grepper.tools = ['rg', 'ag', 'ack-grep', 'ack', 'git']
+  let g:grepper.side_cmd = 'GrepperSideWindow'
+
+  command GrepperSideWindow call s:open_side_window()
+  command -nargs=+ -complete=file Grep Grepper -side -noprompt -query <args>
+
+  " Aliases
+  command -nargs=+ -complete=file Ack  Grep <args>
+  command -nargs=+ -complete=file Rg   Grep <args>
 endif
 
 " CoC
