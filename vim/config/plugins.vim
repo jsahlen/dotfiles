@@ -176,30 +176,17 @@ if exists('g:plugs["vim-bufkill"]')
   nnoremap <silent> <Leader>D :bd<CR>
 endif
 
+" CtrlSF
+if exists('g:plugs["ctrlsf.vim"]')
+  let g:ctrlsf_ackprg = 'rg'
+  let g:ctrlsf_auto_focus = {
+    \   "at": "start"
+    \ }
+  let g:ctrlsf_position = 'right'
+  let g:ctrlsf_regex_pattern = 1
 
-" Grepper
-if exists('g:plugs["vim-grepper"]')
-  function s:open_side_window()
-    let s:winnr = bufwinnr('grepper-results')
-    if (s:winnr >= 0)
-      " execute s:winnr . 'wincmd w'
-      execute 'silent! normal ggdG'
-    else
-      vnew grepper-results
-    endif
-  endfunction
-
-  let g:grepper = {}
-  let g:grepper.dir = 'repo,cwd'
-  let g:grepper.tools = ['rg', 'ag', 'ack-grep', 'ack', 'git']
-  let g:grepper.side_cmd = 'GrepperSideWindow'
-
-  command GrepperSideWindow call s:open_side_window()
-  command -nargs=+ -complete=file Grep Grepper -side -noprompt -query <args>
-
-  " Aliases
-  command -nargs=+ -complete=file Ack  Grep <args>
-  command -nargs=+ -complete=file Rg   Grep <args>
+  " Alias
+  command! -n=* -comp=customlist,ctrlsf#comp#Completion Ack CtrlSF <args>
 endif
 
 " CoC

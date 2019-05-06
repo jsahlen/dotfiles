@@ -70,9 +70,6 @@ if has("autocmd")
   au FileType fzf set laststatus=0 noshowmode noruler signcolumn=no
      \| au BufLeave <buffer> set laststatus=2 showmode ruler
 
-  " Grepper
-  au FileType GrepperSide setlocal signcolumn=no
-
   " Peekaboo
   au FileType peekaboo set signcolumn=no
 
