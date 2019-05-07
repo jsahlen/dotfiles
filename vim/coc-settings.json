@@ -6,6 +6,7 @@
   "snippets.extends": {
     "javascriptreact": ["javascript"]
   },
+  "suggest.snippetIndicator": " ►",
   "solargraph.useBundler": false,
   "solargraph.commandPath": "/usr/local/opt/rbenv/versions/2.3.7/bin/solargraph"
 }
