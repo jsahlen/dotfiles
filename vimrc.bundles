@@ -47,12 +47,13 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 
 if has("nvim")
   Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': 'yarn install' }
+  Plug 'neoclide/coc-css', { 'do': 'yarn install' }
+  Plug 'neoclide/coc-emmet', { 'do': 'yarn install' }
   Plug 'neoclide/coc-eslint', { 'do': 'yarn install' }
   Plug 'neoclide/coc-highlight', { 'do': 'yarn install' }
-  Plug 'neoclide/coc-snippets', { 'do': 'yarn install' }
-  Plug 'neoclide/coc-css', { 'do': 'yarn install' }
   Plug 'neoclide/coc-html', { 'do': 'yarn install' }
   Plug 'neoclide/coc-json', { 'do': 'yarn install' }
+  Plug 'neoclide/coc-snippets', { 'do': 'yarn install' }
   Plug 'neoclide/coc-solargraph', { 'do': 'yarn install' }
   Plug 'neoclide/coc-tsserver', { 'do': 'yarn install' }
 endif
