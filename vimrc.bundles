@@ -30,7 +30,6 @@ Plug 'rhysd/clever-f.vim'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/vitality.vim'
 Plug 'SpaceVim/vim-markdown', { 'for': 'markdown' }
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
