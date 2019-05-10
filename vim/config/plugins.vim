@@ -134,7 +134,6 @@ if exists('g:plugs["fzf.vim"]')
   nmap <silent> ;         :FzfBuffers<CR>
   nmap <silent> <leader>t :FzfFiles<CR>
   nmap <silent> <leader>r :FzfTags<CR>
-  nmap <silent> <leader>a :FzfRg<CR>
 endif
 
 
@@ -184,9 +183,14 @@ if exists('g:plugs["ctrlsf.vim"]')
     \ }
   let g:ctrlsf_position = 'right'
   let g:ctrlsf_regex_pattern = 1
+  let g:ctrlsf_mapping = {
+    \   "open": ["<CR>", "O"],
+    \   "openb": { "key": "o", "suffix": "<C-w>p" },
+    \   "next": "n",
+    \   "prev": "N"
+    \ }
 
-  " Alias
-  command! -n=* -comp=customlist,ctrlsf#comp#Completion Ack CtrlSF <args>
+  nmap <leader>a :CtrlSF<Space>
 endif
 
 " CoC
