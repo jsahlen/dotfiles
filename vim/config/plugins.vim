@@ -17,7 +17,7 @@ endif
 
 " Goyo
 if exists('g:plugs["goyo.vim"]')
-  nmap <silent> <leader>g :Goyo<CR> 
+  nmap <silent> <Leader>g :Goyo<CR>
 endif
 
 
@@ -63,7 +63,7 @@ endif
 
 " neoterm
 if exists('g:plugs["neoterm"]')
-  nnoremap <silent> <leader>e :Ttoggle<CR>
+  nnoremap <silent> <Leader>e :Ttoggle<CR>
 endif
 
 
@@ -132,8 +132,8 @@ if exists('g:plugs["fzf.vim"]')
     \   <bang>0)
 
   nmap <silent> ;         :FzfBuffers<CR>
-  nmap <silent> <leader>t :FzfFiles<CR>
-  nmap <silent> <leader>r :FzfTags<CR>
+  nmap <silent> <Leader>t :FzfFiles<CR>
+  nmap <silent> <Leader>r :FzfTags<CR>
 endif
 
 
@@ -190,18 +190,18 @@ if exists('g:plugs["ctrlsf.vim"]')
     \   "prev": "N"
     \ }
 
-  nmap <leader>a :CtrlSF<Space>
+  nmap <Leader>a :CtrlSF<Space>
 endif
 
 " CoC
 if exists('g:plugs["coc.nvim"]')
   " Use tab for trigger completion with characters ahead and navigate.
   " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-  inoremap <silent><expr> <TAB>
+  inoremap <silent><expr> <Tab>
         \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
+        \ <SID>check_back_space() ? "\<Tab>" :
         \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
 
   function! s:check_back_space() abort
     let col = col('.') - 1
@@ -209,19 +209,19 @@ if exists('g:plugs["coc.nvim"]')
   endfunction
 
   " Use <c-space> for trigger completion.
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <C-Space> coc#refresh()
 
-  let g:coc_snippet_next = '<TAB>'
-  let g:coc_snippet_prev = '<S-TAB>'
+  let g:coc_snippet_next = '<Tab>'
+  let g:coc_snippet_prev = '<S-Tab>'
 
-  " Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
+  " Use <CR> for confirm completion, `<C-g>u` means break undo chain at current position.
   " Coc only does snippet and additional edit on confirm.
   " vim-endwise interferes with our <CR> mapping
   if exists('g:plugs["vim-endwise"]')
     let g:endwise_no_mappings=1
   endif
 
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
+  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
   " Use `[c` and `]c` for navigate diagnostics
   nmap <silent> [c <Plug>(coc-diagnostic-prev)
@@ -236,8 +236,8 @@ endif
 
 " UltiSnips
 if exists('g:plugs["ultisnips"]')
-  let g:UltiSnipsExpandTrigger = "<f9>"
-  let g:UltiSnipsListSnippets = "<c-f9>"
-  let g:UltiSnipsJumpForwardTrigger = "<s-f9>"
-  let g:UltiSnipsJumpBackwardTrigger = "<c-s-f9>"
+  let g:UltiSnipsExpandTrigger = "<F9>"
+  let g:UltiSnipsListSnippets = "<C-F9>"
+  let g:UltiSnipsJumpForwardTrigger = "<S-F9>"
+  let g:UltiSnipsJumpBackwardTrigger = "<C-S-F9>"
 endif

@@ -8,27 +8,27 @@ inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
 " Vertical split then hop to new buffer
-noremap <leader>v :vsplit<CR><c-w>l
-noremap <leader>h :split<CR><c-w>j
+noremap <Leader>v :vsplit<CR><C-w>l
+noremap <Leader>h :split<CR><C-w>j
 
 " Delete all buffers
-noremap <silent> <leader>bd :bufdo bdelete<CR>
+noremap <silent> <Leader>bd :bufdo bdelete<CR>
 
 " Switch between tabs/spaces for indentation
-nnoremap <leader>s :set expandtab!<CR>
+nnoremap <Leader>s :set expandtab!<CR>
 
 " Make ,l clear the highlight as well as redraw
-nnoremap <leader>l :nohls<CR><C-L>
-inoremap <leader>l <C-O>:nohls<CR>
+nnoremap <Leader>l :nohls<CR><C-L>
+inoremap <Leader>l <C-O>:nohls<CR>
 
 " Toggle invisible chars
-noremap <leader>i :set list!<CR>
+noremap <Leader>i :set list!<CR>
 
 " Insert new lines without going into insert mode
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
+map <Enter> o<Esc>
+map <S-Enter> O<Esc>
 " Also map <Leader><Enter> for Terminal Vim
-map <leader><Enter> O<ESC>
+map <Leader><Enter> O<Esc>
 
 " When yanking and pasting, jump to the end of the selection
 vnoremap <silent> y y`]
@@ -36,14 +36,14 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " Yank to system clipboard
-map <leader>y "*y
+map <Leader>y "*y
 
 " Paste from system clipboard without messing up indent
-map <leader>p :set paste<CR>"*p:set nopaste<CR>
-map <leader>P :set paste<CR>"*P:set nopaste<CR>
+map <Leader>p :set paste<CR>"*p:set nopaste<CR>
+map <Leader>P :set paste<CR>"*P:set nopaste<CR>
 
 " Duplicate text (in Visual mode)
-vmap <leader>d y'>p
+vmap <Leader>d y'>p
 
 " Select the text that was last edited/pasted.
 " http://vimcasts.org/episodes/bubbling-text/
@@ -87,7 +87,7 @@ cmap w!! %!sudo tee > /dev/null %
 map q: :q
 
 " Toggle checkboxes in markdown
-nmap <silent> <leader>x :ToggleCheckbox<CR>
+nmap <silent> <Leader>x :ToggleCheckbox<CR>
 
 " Show highlight group under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
