@@ -36,11 +36,11 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " Yank to system clipboard
-map <Leader>y "*y
+map <Leader>y "+y
 
 " Paste from system clipboard without messing up indent
-map <Leader>p :set paste<CR>"*p:set nopaste<CR>
-map <Leader>P :set paste<CR>"*P:set nopaste<CR>
+map <Leader>p :set paste<CR>"+p:set nopaste<CR>
+map <Leader>P :set paste<CR>"+P:set nopaste<CR>
 
 " Duplicate text (in Visual mode)
 vmap <Leader>d y'>p
