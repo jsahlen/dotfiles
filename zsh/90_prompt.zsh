@@ -33,6 +33,7 @@ case `hostname -s | tr '[:upper:]' '[:lower:]'` in
   minimoose)   PROMPT_COLOR=$fg_bold[magenta] ;;
   mortos)      PROMPT_COLOR=$fg_bold[green]   ;;
   iggins)      PROMPT_COLOR=$fg_bold[blue]    ;;
+  stereo)      PROMPT_COLOR=$fg_bold[yellow]  ;;
 esac
 
 # Git prompt config
