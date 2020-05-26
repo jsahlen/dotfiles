@@ -16,8 +16,6 @@ if [ -d "$FZF_DIR" ]; then
     from:local, \
     use:"shell/*.zsh", \
     defer:2
-else
-  echo "FZF_DIR ($FZF_DIR) not found."
 fi
 
 zplug "docker/compose", use:"contrib/completion/zsh"
