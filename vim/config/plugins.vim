@@ -232,6 +232,18 @@ if exists('g:plugs["coc.nvim"]')
   nmap <silent> gy <Plug>(coc-type-definition)
   nmap <silent> gi <Plug>(coc-implementation)
   nmap <silent> gr <Plug>(coc-references)
+
+  " Load extensions
+  let g:coc_global_extensions = [
+    \ 'coc-css',
+    \ 'coc-eslint',
+    \ 'coc-highlight',
+    \ 'coc-html',
+    \ 'coc-json',
+    \ 'coc-snippets',
+    \ 'coc-solargraph',
+    \ 'coc-tsserver',
+    \ ]
 endif
 
 " UltiSnips
