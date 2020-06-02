@@ -260,3 +260,8 @@ if exists('g:plugs["ultisnips"]')
   let g:UltiSnipsJumpForwardTrigger = "<S-F9>"
   let g:UltiSnipsJumpBackwardTrigger = "<C-S-F9>"
 endif
+
+" vim-peekaboo
+if exists('g:plugs["vim-peekaboo"]')
+  let g:peekaboo_delay = 600
+endif
