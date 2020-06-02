@@ -10,3 +10,6 @@ fi
 if [[ -f $HOME/.zshrc.local ]]; then
   source $HOME/.zshrc.local
 fi
+
+# Set a variable to prevent $PATH from getting blown away
+export ZSH_PATH_SET=1

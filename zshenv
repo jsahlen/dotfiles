@@ -22,10 +22,12 @@ export LC_CTYPE="${LANGUAGE}"
 export EDITOR="vim"
 
 # Path
-NEW_PATH=""
-NEW_PATH="$NEW_PATH:$HOME/.zplug/bin" # zplug bin directory
-NEW_PATH="$NEW_PATH:$HOME/.local/bin" # user bin directory
-export PATH="$NEW_PATH:$PATH"
+if [ -z $ZSH_PATH_SET ]; then
+  PATH=$(getconf PATH)
+  PATH="$PATH:$HOME/.zplug/bin" # zplug bin directory
+  PATH="$PATH:$HOME/.local/bin" # user bin directory
+  export PATH
+fi
 
 # History
 export HISTFILE="$HOME/.zsh_history"
@@ -55,7 +57,7 @@ for fzfdir in "${fzfdirs[@]}"; do
 done
 unset fzfdirs fzfdir
 export FZF_DIR
-[ ! -z $FZF_DIR ] && export PATH="$FZF_DIR/bin:$PATH"
+[ -z $ZSH_PATH_SET ] && [ ! -z $FZF_DIR ] && export PATH="$FZF_DIR/bin:$PATH"
 
 # load local zshenv
 [ -f "$HOME/.zshenv.local" ] && source "$HOME/.zshenv.local"
