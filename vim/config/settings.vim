@@ -62,6 +62,9 @@ set hlsearch                     " Highlight results
 set incsearch                    " Search-as-you-type
 set ignorecase                   " Ignore case…
 set smartcase                    " …but not if an uppercase character is used
+if exists("&inccommand")
+  set inccommand=nosplit
+end
 
 " Splits
 set splitright                   " Vertical splits go on the right
