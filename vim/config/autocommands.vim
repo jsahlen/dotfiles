@@ -63,6 +63,8 @@ if has("autocmd")
   " FZF
   au FileType fzf set laststatus=0 noshowmode noruler signcolumn=no
      \| au BufLeave <buffer> set laststatus=2 showmode ruler
+  au FileType list set laststatus=0 noshowmode noruler signcolumn=no
+     \| au BufLeave <buffer> set laststatus=2 showmode ruler
 
   " Peekaboo
   au FileType peekaboo set signcolumn=no
