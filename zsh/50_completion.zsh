@@ -21,3 +21,8 @@ zstyle ':completion:*:manuals' separate-sections true
 
 # Menu select
 zmodload -i zsh/complist
+
+# Load completions for GitHub CLI
+if hash gh &>/dev/null; then
+  eval "$(gh completion -s zsh)"
+fi
