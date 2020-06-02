@@ -70,6 +70,9 @@ end
 set splitright                   " Vertical splits go on the right
 set splitbelow                   " Horizontal splits go below
 
+" Undo
+set undofile
+
 " Hide away backup and swap files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
