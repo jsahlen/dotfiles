@@ -12,12 +12,6 @@ function s:AdjustColorScheme()
     hi Comment cterm=italic gui=italic
   endif
 
-  " ALE Highlights
-  if exists('g:plugs["ale"]')
-    highlight ALEError cterm=undercurl ctermbg=1 ctermfg=0
-    highlight ALEWarning cterm=undercurl
-  endif
-
   " vim-matchup Highlights
   if exists('g:plugs["vim-matchup"]')
     highlight MatchParen ctermbg=8
