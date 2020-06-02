@@ -77,6 +77,12 @@ set undofile
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+" Neovim ruby path with rbenv
+if has("nvim") && isdirectory($RBENV_ROOT)
+  let rbenv_prefix = system('echo -n $(rbenv prefix $(rbenv global))')
+  let g:ruby_host_prog = rbenv_prefix . '/bin/neovim-ruby-host'
+end
+
 
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence.
 " https://gist.github.com/1195581
