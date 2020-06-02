@@ -9,33 +9,19 @@ call plug#begin('~/.vim/bundle')
 Plug '907th/vim-auto-save'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'Galooshi/vim-import-js', { 'for': 'javascript', 'do': 'npm install -g import-js' }
-Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/vim-peekaboo'
 Plug 'matze/vim-move'
 Plug 'mhartington/oceanic-next'
 Plug 'dyng/ctrlsf.vim'
-Plug 'mmalecki/vim-node.js', { 'for': 'javascript' }
-Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars', 'html.mustache'] }
-Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
-Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
-Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
-Plug 'othree/html5.vim', { 'for': 'html' }
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'qpkorr/vim-bufkill'
 Plug 'rhysd/clever-f.vim'
-Plug 'SirVer/ultisnips'
 Plug 'sjl/vitality.vim'
-Plug 'SpaceVim/vim-markdown', { 'for': 'markdown' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
@@ -43,7 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'sheerun/vim-polyglot'
 
 if has("nvim")
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
