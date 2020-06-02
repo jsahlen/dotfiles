@@ -53,6 +53,7 @@ brew "tree"
 brew "vim"
 brew "watch"
 brew "wget"
+brew "whalebrew"
 brew "ykman"
 brew "zsh"
 
