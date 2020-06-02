@@ -11,7 +11,7 @@ export BAT_THEME="Oceanic Next"
 export FZF_PREVIEW_COMMAND="bat --style=numbers --color=always {} || highlight -O ansi -l {} || coderay {} || rougify {} || cat {}"
 export FZF_COMPLETION_OPTS="--preview '(${FZF_PREVIEW_COMMAND}) 2> /dev/null | head -200'"
 export FZF_CTRL_T_OPTS="$FZF_COMPLETION_OPTS"
-export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore --follow --glob "!.git/*" --glob "!node_modules/*"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!node_modules/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 if [ -n "${TMUX}" ]; then
