@@ -58,7 +58,7 @@ if has("autocmd")
   au FileType markdown noremap <silent> <F5> :silent !open -a "Google Chrome" "%"<CR>
 
   " Close help windows with just q
-  au FileType HELP map <buffer> q :q<CR>
+  au FileType help noremap <buffer> q :q<CR>
 
   " FZF
   au FileType fzf set laststatus=0 noshowmode noruler signcolumn=no
