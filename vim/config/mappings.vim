@@ -49,6 +49,11 @@ vmap <Leader>d y'>p
 " http://vimcasts.org/episodes/bubbling-text/
 nmap gV `[v`]
 
+" Delete single character without placing it in the default register
+" (keep X for the original purpose)
+noremap x "_x
+noremap X x
+
 " H/N to move between tabs
 nnoremap <silent> L :tabnext<CR>
 nnoremap <silent> H :tabprev<CR>
