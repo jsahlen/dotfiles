@@ -54,6 +54,9 @@ nmap gV `[v`]
 noremap x "_x
 noremap X x
 
+" Paste in visual mode without updating the default register
+vnoremap p "_dP`]
+
 " H/N to move between tabs
 nnoremap <silent> L :tabnext<CR>
 nnoremap <silent> H :tabprev<CR>
