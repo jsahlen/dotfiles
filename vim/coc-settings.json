@@ -8,5 +8,11 @@
   },
   "suggest.snippetIndicator": " ►",
   "solargraph.useBundler": false,
-  "solargraph.commandPath": "/usr/local/opt/rbenv/versions/2.3.7/bin/solargraph"
+  "list.maxHeight": 40,
+  "list.insertMappings": {
+    "<C-t>": "action:tabe",
+    "<C-h>": "action:split",
+    "<C-v>": "action:vsplit"
+  },
+  "list.previewHighlightGroup": "Comment"
 }

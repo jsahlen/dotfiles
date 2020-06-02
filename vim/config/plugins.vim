@@ -233,6 +233,9 @@ if exists('g:plugs["coc.nvim"]')
   nmap <silent> gi <Plug>(coc-implementation)
   nmap <silent> gr <Plug>(coc-references)
 
+  " Other maps
+  nmap <silent> <leader>rn <Plug>(coc-rename)
+
   " Load extensions
   let g:coc_global_extensions = [
     \ 'coc-css',
