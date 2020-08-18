@@ -24,6 +24,11 @@ export EDITOR="vim"
 # Path
 if [ -z $ZSH_PATH_SET ]; then
   PATH=$(getconf PATH)
+
+  if [[ -z "$PATH" || "$PATH" == "/bin:/usr/bin" ]]; then
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
+  fi
+
   PATH="$PATH:$HOME/.zplug/bin" # zplug bin directory
   PATH="$PATH:$HOME/.local/bin" # user bin directory
   export PATH
