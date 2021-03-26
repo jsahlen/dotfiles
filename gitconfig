@@ -36,3 +36,5 @@
 	short = 1
 [credential]
 	helper = osxkeychain
+[init]
+	defaultBranch = main
