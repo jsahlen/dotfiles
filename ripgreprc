@@ -1,0 +1,17 @@
+#--colors=path:none
+#--colors=path:style:bold
+#--colors=line:none
+#--colors=line:fg:black
+#--colors=line:style:intense
+#--colors=column:none
+#--colors=column:fg:black
+#--colors=column:style:intense
+#--colors=match:none
+#--colors=match:fg:yellow
+--colors=line:fg:yellow
+--colors=line:style:bold
+--colors=path:fg:green
+--colors=path:style:bold
+--colors=match:fg:black
+--colors=match:bg:yellow
+--colors=match:style:nobold
