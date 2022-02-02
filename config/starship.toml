@@ -36,6 +36,10 @@ symbol = " "
 [git_branch]
 symbol = " "
 
+[git_status]
+style = "bold dimmed"
+up_to_date = "✔"
+
 [golang]
 symbol = " "
 
