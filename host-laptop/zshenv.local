@@ -1,0 +1,3 @@
+if [ -z $ZSH_PATH_SET ]; then
+  export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.composer/vendor/bin:$PATH
+fi
