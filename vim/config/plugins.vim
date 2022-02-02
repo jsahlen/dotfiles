@@ -239,6 +239,7 @@ if exists('g:plugs["coc.nvim"]')
 
   " Other maps
   nmap <silent> <leader>rn <Plug>(coc-rename)
+  nmap <silent> <leader>ef :CocCommand eslint.executeAutofix<CR>
 
   " Load extensions
   let g:coc_global_extensions = [
