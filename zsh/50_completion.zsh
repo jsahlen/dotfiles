@@ -11,6 +11,9 @@ zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
+# Better SSH/Rsync/SCP Autocomplete
+zstyle ':completion:*:(ssh|scp|rsync):*' hosts off
+
 # Directory
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
