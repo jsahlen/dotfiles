@@ -8,5 +8,11 @@ error_symbol = "[➜](bold red)"
 [cmd_duration]
 disabled = true
 
+[hostname]
+style = "bold yellow"
+
 [directory]
 truncation_length = 8
+
+[username]
+format = "[$user@]($style)"
