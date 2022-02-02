@@ -1,0 +1,12 @@
+add_newline = false
+command_timeout = 500
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[cmd_duration]
+disabled = true
+
+[directory]
+truncation_length = 8
