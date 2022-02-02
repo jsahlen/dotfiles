@@ -8,3 +8,4 @@
 .ignore
 .foreman
 *.un~
+.vscode
