@@ -67,6 +67,10 @@ symbol = " "
 symbol = " "
 format = "[$symbol$branch]($style) "
 
+[git_commit]
+tag_disabled = false
+tag_symbol = "  "
+
 [git_status]
 style = "black"
 
