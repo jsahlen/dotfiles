@@ -29,6 +29,8 @@
 [core]
 	excludesfile = ~/.gitignore
 	autocrlf = input
+[pull]
+	rebase = true
 [push]
 	default = current
 [github]
