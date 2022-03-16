@@ -12,11 +12,6 @@ function s:AdjustColorScheme()
     hi Comment cterm=italic gui=italic
   endif
 
-  " vim-matchup Highlights
-  if exists('g:plugs["vim-matchup"]')
-    highlight MatchParen ctermbg=8
-  endif
-
   " coc.nvim signs
   if exists('g:plugs["coc.nvim"]')
     highlight clear CocErrorSign
@@ -27,15 +22,9 @@ function s:AdjustColorScheme()
     highlight link CocWarningSign ALEWarningSign
     highlight link CocInfoSign ALEInfoSign
   endif
-
-  " base16-brewer-light
-  if g:colors_name == "base16-brewer"
-    hi EndOfBuffer guifg=#fcfdfe ctermfg=00
-  endif
 endfunction
 
 if has("autocmd")
-
   " Do some adjustments to the colorscheme
   au ColorScheme * call s:AdjustColorScheme()
 
@@ -65,8 +54,4 @@ if has("autocmd")
      \| au BufLeave <buffer> set laststatus=2 showmode ruler
   au FileType list set laststatus=0 noshowmode noruler signcolumn=no
      \| au BufLeave <buffer> set laststatus=2 showmode ruler
-
-  " Peekaboo
-  au FileType peekaboo set signcolumn=no
-
 endif

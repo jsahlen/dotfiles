@@ -6,39 +6,32 @@ endif
 call plug#begin('~/.vim/bundle')
 
 " GitHub bundles
-Plug '907th/vim-auto-save'
-Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'junegunn/vim-peekaboo'
+Plug 'dyng/ctrlsf.vim'
 Plug 'matze/vim-move'
 Plug 'mhartington/oceanic-next'
-Plug 'dyng/ctrlsf.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'rhysd/clever-f.vim'
 Plug 'sjl/vitality.vim'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
 
-if has("nvim")
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
-endif
+" if has('nvim')
+"   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+"   Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
+" endif
 
 " fzf, if installed
-if isdirectory($FZF_DIR)
-  Plug $FZF_DIR
+if executable('fzf')
+  Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
 endif
 
@@ -46,7 +39,6 @@ endif
 Plug 'vim-scripts/gitignore'
 Plug 'vim-scripts/IndexedSearch'
 Plug 'vim-scripts/L9'
-
 
 " End Vim-Plug config
 call plug#end()

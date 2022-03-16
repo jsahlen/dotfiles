@@ -1,9 +1,3 @@
-" Rails.vim
-if exists('g:plugs["vim-rails"]')
-  let g:rails_ctags_arguments = '--fields=+l'
-endif
-
-
 " vim-move
 if exists('g:plugs["vim-move"]')
   let g:move_map_keys = 0
@@ -13,104 +7,6 @@ if exists('g:plugs["vim-move"]')
   vmap <S-j> <Plug>MoveBlockDown
   vmap <S-k> <Plug>MoveBlockUp
 endif
-
-
-" Goyo
-if exists('g:plugs["goyo.vim"]')
-  nmap <silent> <Leader>g :Goyo<CR>
-endif
-
-
-" Airline
-if exists('g:plugs["vim-airline"]')
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#show_splits = 0
-  let g:airline#extensions#tabline#left_sep = ''
-  let g:airline#extensions#tabline#left_alt_sep = ''
-  let g:airline#extensions#tabline#show_buffers = 0
-  let g:airline#extensions#tabline#show_close_button = 0
-  let g:airline#extensions#tabline#tab_min_count = 2
-  let g:airline#extensions#tabline#show_tab_type = 0
-  let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-  let g:airline_theme = 'oceanicnext'
-
-  set noshowmode
-endif
-
-
-" tern
-if exists('g:plugs["tern_for_vim"]')
-  let g:tern_request_timeout = 1
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = 1
-  let g:tern#command = ["tern"]
-  let g:tern#arguments = ["--persistent"]
-
-  nnoremap <silent> td :TernDef<CR>
-  nnoremap <silent> tp :TernDefPreview<CR>
-  nnoremap <silent> ts :TernDefSplit<CR>
-  nnoremap <silent> tt :TernDefTab<CR>
-  nnoremap <silent> tr :TernRefs<CR>
-endif
-
-
-" Neosnippets
-if exists('g:plugs["neosnippet.vim"]')
-  let g:neosnippet#disable_runtime_snippets = {
-  \   '_' : 1,
-  \ }
-  let g:neosnippet#snippets_directory='~/.vim/snippets'
-endif
-
-
-" neoterm
-if exists('g:plugs["neoterm"]')
-  nnoremap <silent> <Leader>e :Ttoggle<CR>
-endif
-
-
-" completor.vim
-if exists('g:plugs["completor.vim"]')
-  let g:completor_auto_trigger = 0
-
-  let g:completor_css_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'
-  let g:completor_scss_omni_trigger = g:completor_css_omni_trigger
-endif
-
-
-" completor.vim + Neosnippet
-if exists('g:plugs["completor.vim"]') && exists('g:plugs["neosnippet.vim"]')
-  imap <silent><expr><Tab>
-     \ pumvisible() ? "\<C-n>"
-     \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
-     \ : (<SID>is_whitespace() ? "\<Tab>"
-     \ : "<C-R>=completor#do('complete')<CR>"))
-
-  smap <silent><expr><Tab>
-     \ pumvisible() ? "\<C-n>"
-     \ : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)"
-     \ : (<SID>is_whitespace() ? "\<Tab>"
-     \ : "<C-R>=completor#do('complete')<CR>"))
-
-  imap <expr><S-Tab>
-         \ pumvisible() ? "\<C-p>" : "\<C-h>"
-
-  " vim-endwise interferes with our <CR> mapping
-  if exists('g:plugs["vim-endwise"]')
-    let g:endwise_no_mappings=1
-    imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>\<Plug>DiscretionaryEnd"
-  else
-    imap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
-  endif
-
-  function! s:is_whitespace() "{{{
-    let col = col('.') - 1
-    return ! col || getline('.')[col - 1] =~? '\s'
-  endfunction "}}}
-endif
-
 
 " fzf
 if exists('g:plugs["fzf.vim"]')
@@ -138,38 +34,6 @@ if exists('g:plugs["fzf.vim"]')
   nmap <silent> ;         :FzfBuffers<CR>
   nmap <silent> <Leader>t :FzfFiles<CR>
   nmap <silent> <Leader>r :FzfTags<CR>
-endif
-
-
-" ALE
-if exists('g:plugs["ale"]')
-  let g:ale_echo_delay = 300
-  let g:ale_lint_delay = 100
-  let g:ale_lint_on_text_changed = 'normal'
-  let g:ale_lint_on_insert_leave = 1
-  let g:ale_sign_column_always = 1
-  let g:ale_sign_error = "✖"
-  let g:ale_sign_warning = "▲"
-  let g:ale_linters_explicit = 1
-
-  let g:ale_linters = {
-  \  'javascript': ['eslint'],
-  \  'ruby': ['standardrb'],
-  \}
-
-  if exists('g:plugs["vim-airline"]')
-    let g:airline#extensions#ale#enabled = 1
-  endif
-endif
-
-" vim-markdown
-if exists('g:plugs["vim-markdown"]')
-  let g:markdown_enable_spell_checking = 0
-endif
-
-" vim-jsx
-if exists('g:plugs["vim-jsx"]')
-  let g:jsx_ext_required = 0
 endif
 
 " vim-bufkill
@@ -252,17 +116,4 @@ if exists('g:plugs["coc.nvim"]')
     \ 'coc-solargraph',
     \ 'coc-tsserver',
     \ ]
-endif
-
-" UltiSnips
-if exists('g:plugs["ultisnips"]')
-  let g:UltiSnipsExpandTrigger = "<F9>"
-  let g:UltiSnipsListSnippets = "<C-F9>"
-  let g:UltiSnipsJumpForwardTrigger = "<S-F9>"
-  let g:UltiSnipsJumpBackwardTrigger = "<C-S-F9>"
-endif
-
-" vim-peekaboo
-if exists('g:plugs["vim-peekaboo"]')
-  let g:peekaboo_delay = 600
 endif

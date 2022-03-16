@@ -94,9 +94,6 @@ cmap w!! %!sudo tee > /dev/null %
 " Stop the stupid window from popping up
 map q: :q
 
-" Toggle checkboxes in markdown
-nmap <silent> <Leader>x :ToggleCheckbox<CR>
-
 " Show highlight group under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
