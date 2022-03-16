@@ -12,6 +12,11 @@ if [ ! -d $HOME/.asdf ]; then
   git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch ${asdf_release:-master}
 fi
 
+if [ ! -f $HOME/.local/bin/starship ]; then
+  echo "Installing starship"
+  sh -c "$(curl -sS https://starship.rs/install.sh)" -- -y -b $HOME/.local/bin
+fi
+
 if [ -d $HOME/.vim ] && [ ! -d $HOME/.vim/backup ]; then
   mkdir -p $HOME/.vim/backup
 fi
