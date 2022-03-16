@@ -4,14 +4,6 @@ setopt no_global_rcs
 # Terminfo path
 export TERMINFO="$HOME/.terminfo"
 
-# Load local completions
-fpath=(~/.zsh/completion $fpath)
-
-# Autoload
-autoload -Uz add-zsh-hook
-autoload -Uz colors && colors
-autoload -Uz compinit && compinit -u
-
 # Language
 export LANGUAGE="en_US.UTF-8"
 export LANG="${LANGUAGE}"
@@ -50,19 +42,6 @@ export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 # Homebrew
 export HOMEBREW_AUTO_UPDATE_SECS=604800 # once every 7 days
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# fzf directory
-FOUND_FZF_DIR=0
-FZF_DIR=""
-fzfdirs=("$HOME/.local/fzf" "$HOME/.fzf" "/usr/local/opt/fzf" "/opt/fzf")
-for fzfdir in "${fzfdirs[@]}"; do
-  if [ -d $fzfdir -a -z $FZF_DIR ]; then
-    FZF_DIR="$fzfdir"
-  fi
-done
-unset fzfdirs fzfdir
-export FZF_DIR
-[ -z $ZSH_PATH_SET ] && [ ! -z $FZF_DIR ] && export PATH="$FZF_DIR/bin:$PATH"
 
 # load local zshenv
 [ -f "$HOME/.zshenv.local" ] && source "$HOME/.zshenv.local"

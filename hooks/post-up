@@ -1,9 +1,15 @@
 #!/bin/bash
 
-if [ ! -d $HOME/.zplug ]; then
-  mkdir -p $HOME/.zplug/repos/zplug
-  git clone https://github.com/zplug/zplug $HOME/.zplug/repos/zplug/zplug
-  ln -sf $HOME/.zplug/repos/zplug/zplug/init.zsh $HOME/.zplug/init.zsh
+if [ ! -d $HOME/.znap/zsh-snap ]; then
+  echo "Installing zsh-snap"
+  mkdir -p $HOME/.znap
+  git clone https://github.com/marlonrichert/zsh-snap.git $HOME/.znap/zsh-snap
+fi
+
+if [ ! -d $HOME/.asdf ]; then
+  echo "Installing asdf"
+  asdf_release=$(curl --silent "https://api.github.com/repos/asdf-vm/asdf/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch ${asdf_release:-master}
 fi
 
 if [ -d $HOME/.vim ] && [ ! -d $HOME/.vim/backup ]; then

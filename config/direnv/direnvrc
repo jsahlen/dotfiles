@@ -1,0 +1,3 @@
+if hash asdf &> /dev/null; then
+  source "$(asdf direnv hook asdf)"
+fi
