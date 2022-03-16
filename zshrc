@@ -4,7 +4,7 @@ if [[ -f $HOME/.znap/zsh-snap/znap.zsh ]]; then
 
   if (( ${+commands[starship]} )); then
     znap eval starship 'starship init zsh --print-full-init'
-    (( ${+SSH_TTY} )) || znap prompt starship
+    (( ${+SSH_TTY} )) || znap prompt
   fi
 
   znap source zsh-users/zsh-completions
