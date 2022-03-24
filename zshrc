@@ -25,7 +25,7 @@ if [[ -f $HOME/.znap/zsh-snap/znap.zsh ]]; then
   # oh-my-zsh plugins
   () {
     local -a plugins=(
-      asdf
+      asdf git
       ${commands[ansible]+ansible}
       ${commands[brew]+brew}
       ${commands[code]+vscode}
