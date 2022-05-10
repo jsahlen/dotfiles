@@ -7,10 +7,6 @@ if [[ -f $HOME/.znap/zsh-snap/znap.zsh ]]; then
     (( ${+SSH_TTY} )) || znap prompt
   fi
 
-  if (( ${+commands[fzf]} )); then
-    znap source Aloxaf/fzf-tab
-  fi
-
   znap source zsh-users/zsh-completions
   znap source zsh-users/zsh-history-substring-search
 
