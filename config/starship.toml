@@ -39,6 +39,7 @@ format = "[$symbol($version )]($style)"
 disabled = true
 
 [hostname]
+ssh_symbol = ""
 style = "bold yellow"
 
 [dart]
