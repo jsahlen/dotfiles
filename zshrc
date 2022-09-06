@@ -33,7 +33,7 @@ if [[ -f $HOME/.znap/zsh-snap/znap.zsh ]]; then
   }
 
   if (( ${+commands[asdf]} )); then
-    znap eval asdf-direnv 'asdf exec $(asdf which direnv) hook zsh'
+    znap eval asdf-direnv "$(asdf which direnv) hook zsh"
   fi
 fi
 
