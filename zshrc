@@ -34,7 +34,7 @@ if [[ -f $HOME/.znap/zsh-snap/znap.zsh ]]; then
 
   if (( ${+commands[asdf]} )); then
     direnv_path="$(asdf which direnv 2> /dev/null)"
-    (( ${+direnv_path} )) && znap eval asdf-direnv "$direnv_path hook zsh"
+    [[ -n "${direnv_path}" ]] && znap eval asdf-direnv "$direnv_path hook zsh"
   fi
 fi
 
