@@ -14,7 +14,7 @@ if [ ! -d $HOME/.asdf ]; then
   for plugin in direnv nodejs ruby; do asdf plugin-add $plugin; done
 fi
 
-if [ ! -f $HOME/.local/bin/starship ]; then
+if ! hash starship &>/dev/null && [ ! -f $HOME/.local/bin/starship ]; then
   echo "Installing starship"
   sh -c "$(curl -sS https://starship.rs/install.sh)" -- -y -b $HOME/.local/bin
 fi
