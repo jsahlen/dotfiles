@@ -29,3 +29,9 @@ zmodload -i zsh/complist
 if hash gh &>/dev/null; then
   eval "$(gh completion -s zsh)"
 fi
+
+# Load completions for brew
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
