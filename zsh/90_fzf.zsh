@@ -7,7 +7,6 @@ export FZF_DEFAULT_OPTS='
 '
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-export BAT_THEME="Oceanic Next"
 export FZF_PREVIEW_COMMAND="bat --style=numbers --color=always {} || highlight -O ansi -l {} || coderay {} || rougify {} || cat {}"
 export FZF_COMPLETION_OPTS="--preview '(${FZF_PREVIEW_COMMAND}) 2> /dev/null | head -200'"
 export FZF_CTRL_T_OPTS="$FZF_COMPLETION_OPTS"

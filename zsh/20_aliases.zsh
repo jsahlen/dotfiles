@@ -51,3 +51,11 @@ fi
 if hash nvim &>/dev/null; then
   alias vim="nvim"
 fi
+
+# Bat
+if hash bat &>/dev/null; then
+  alias bathelp="bat --plain --language=help"
+  help() {
+    "$@" --help 2>&1 | bat --plain --language=help
+  }
+fi
