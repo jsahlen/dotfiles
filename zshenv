@@ -43,5 +43,8 @@ export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# asdf-vm
+export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
+
 # load local zshenv
 [ -f "$HOME/.zshenv.local" ] && source "$HOME/.zshenv.local"
