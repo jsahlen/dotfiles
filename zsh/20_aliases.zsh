@@ -7,7 +7,6 @@ alias ls="ls $GLS_ARGS"
 if [ $? -eq 1 ]; then # The environment ls isn't GNU ls; we're not on Linux
   # On OS X, use gls if it has been installed via Homebrew
   if hash gls &> /dev/null; then
-    echo "USE GLS"
     alias ls="gls $GLS_ARGS"
   else
     unalias ls
