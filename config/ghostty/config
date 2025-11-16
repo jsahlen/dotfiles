@@ -1,0 +1,31 @@
+# Theme
+theme = onedarkpro
+
+# Typography
+font-family = MonoLisa
+font-style-bold = Bold
+font-size = 15
+font-synthetic-style = false
+font-feature = -calt, -liga, -dlig
+font-thicken = true
+font-thicken-strength = 1
+adjust-cell-width = -1
+adjust-cell-height = 3
+
+# Window
+macos-titlebar-style = tabs
+window-padding-x = 16
+window-padding-y = 0,12
+window-padding-balance = true
+window-width = 120
+window-height = 40
+
+# Cursor
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = true
+
+# Misc
+macos-option-as-alt = true
+confirm-close-surface = false
+
