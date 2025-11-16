@@ -35,6 +35,11 @@ if [[ $UID == 0 ]]; then # no history for root
   export SAVEHIST=0
 fi
 
+# Set ZSH_CACHE_DIR for compatibility with oh-my-zsh plugins
+[[ -n "$ZSH_CACHE_DIR" ]] || ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+mkdir -p "$ZSH_CACHE_DIR/completions"
+(( ${fpath[(Ie)$ZSH_CACHE_DIR/completions]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
+
 # ls command colors
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30"
