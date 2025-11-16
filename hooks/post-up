@@ -6,14 +6,6 @@ if [ ! -d $HOME/.znap/zsh-snap ]; then
   git clone https://github.com/marlonrichert/zsh-snap.git $HOME/.znap/zsh-snap
 fi
 
-if [ ! -d $HOME/.asdf ]; then
-  echo "Installing asdf"
-  asdf_release=$(curl --silent "https://api.github.com/repos/asdf-vm/asdf/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch ${asdf_release:-master}
-  source $HOME/.asdf/asdf.sh
-  for plugin in direnv nodejs ruby; do asdf plugin-add $plugin; done
-fi
-
 if ! hash starship &>/dev/null && [ ! -f $HOME/.local/bin/starship ]; then
   echo "Installing starship"
   sh -c "$(curl -sS https://starship.rs/install.sh)" -- -y -b $HOME/.local/bin
