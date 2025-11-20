@@ -11,6 +11,7 @@ users:
   group_yours: { is_bold: false }
 
 file_type:
+  source: { foreground: Default, is_bold: false }
   build: { is_bold: false, is_underline: false }
 
 date: { foreground: Default }
