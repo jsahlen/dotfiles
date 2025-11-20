@@ -30,4 +30,5 @@ macos-option-as-alt = true
 confirm-close-surface = false
 
 # Include local config (if available)
+config-file = ?./linux.conf
 config-file = ?./local.conf

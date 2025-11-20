@@ -2,10 +2,11 @@
 
 Managed with [`rcm`](https://github.com/thoughtbot/rcm).
 
-## Getting started:
+## Getting started
 
-* Clone this repository into `~/.dotfiles`
-* Install `rcm`
-* `rcup -C -K rcrc`
-* Maybe set `HOSTNAME="foobar"` in `~/.rcrc`
-* `rcup`
+- Clone this repository into `~/.dotfiles`
+- Install `rcm`
+- `rcup -C -K rcrc`
+- Maybe set `HOSTNAME="foobar"` in `~/.rcrc`
+- Maybe set `TAGS="linux"`in `~/.rcrc`
+- `rcup`
