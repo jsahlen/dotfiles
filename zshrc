@@ -9,6 +9,7 @@ if [[ -f $HOME/.znap/zsh-snap/znap.zsh ]]; then
 
   znap source zsh-users/zsh-completions
   znap source zsh-users/zsh-history-substring-search
+  znap source zsh-users/zsh-autosuggestions
 
   znap source jsahlen/tmux-vim-integration.plugin.zsh
 
