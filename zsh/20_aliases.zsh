@@ -22,9 +22,11 @@ alias git="nocorrect git"
 alias npm="nocorrect npm"
 
 # Directory shortcuts
+alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
 
 # Always use colors with `tree`
 hash tree &>/dev/null && alias tree="tree -C"
