@@ -1,0 +1,16 @@
+colorful: false
+
+filekinds:
+  mount_point: { is_underline: false }
+
+perms:
+  attribute: { is_dimmed: true }
+
+users:
+  user_you: { is_bold: false }
+  group_yours: { is_bold: false }
+
+file_type:
+  build: { is_bold: false, is_underline: false }
+
+date: { foreground: Default }
