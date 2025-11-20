@@ -15,6 +15,7 @@ tap "thoughtbot/formulae"
 tap "timescale/tap"
 
 brew "ansible"
+brew "asdf"
 brew "bat"
 brew "colordiff"
 brew "coreutils"
