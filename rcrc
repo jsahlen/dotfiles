@@ -1,2 +1,3 @@
 COPY_ALWAYS="rcrc"
 EXCLUDES="rcrc README.md terminfo Brewfile"
+SYMLINK_DIRS="zsh config/*"
