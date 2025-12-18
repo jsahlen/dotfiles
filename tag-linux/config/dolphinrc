@@ -1,0 +1,40 @@
+[ContextMenu]
+ShowOpenTerminal=false
+
+[DetailsMode]
+ExpandableFolders=false
+IconSize=22
+PreviewSize=32
+
+[ExtractDialog]
+2560x1440 screen: Height=720
+2560x1440 screen: Width=1563
+DirHistory[$e]=$HOME/Games/Cyberpunk 2077/
+
+[General]
+RememberOpenedTabs=false
+ShowSelectionToggle=false
+ShowStatusBar=FullWidth
+ShowZoomSlider=true
+Version=202
+ViewPropsTimestamp=2025,11,16,14,49,25.444
+
+[IconsMode]
+IconSize=16
+
+[InformationPanel]
+dateFormat=ShortFormat
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,glycin-heif,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,glycin-image-rs,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,glycin-svg,svgthumbnail,ffmpegthumbs,exe-thumbnailer,gsf-office
+
+[ViewPropertiesDialog]
+2560x1440 screen: Height=576
+2560x1440 screen: Width=365

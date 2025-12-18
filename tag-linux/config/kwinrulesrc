@@ -1,0 +1,17 @@
+[General]
+count=2
+rules=bd13da67-0d7d-4a43-9933-8ac648296653,de9988fb-8483-424e-9ee0-d32d6cc3f35f
+
+[bd13da67-0d7d-4a43-9933-8ac648296653]
+Description=Ghostty (Karousel)
+size=1268,1380
+sizerule=3
+wmclass=com.mitchellh.ghostty
+wmclassmatch=1
+
+[de9988fb-8483-424e-9ee0-d32d6cc3f35f]
+Description=Firefox (Karousel)
+size=1693,1380
+sizerule=3
+wmclass=firefox
+wmclassmatch=1
