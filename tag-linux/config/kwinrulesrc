@@ -1,6 +1,13 @@
+[1ffe5642-1456-422c-a0eb-d066de007441]
+Description=Zen Browser (Karousel)
+size=1693,1380
+sizerule=3
+wmclass=zen
+wmclassmatch=1
+
 [General]
-count=2
-rules=bd13da67-0d7d-4a43-9933-8ac648296653,de9988fb-8483-424e-9ee0-d32d6cc3f35f
+count=3
+rules=bd13da67-0d7d-4a43-9933-8ac648296653,de9988fb-8483-424e-9ee0-d32d6cc3f35f,1ffe5642-1456-422c-a0eb-d066de007441
 
 [bd13da67-0d7d-4a43-9933-8ac648296653]
 Description=Ghostty (Karousel)

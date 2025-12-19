@@ -2,9 +2,7 @@
 Number of Actions=0
 
 [PlasmaTransientsConfig]
-PreloadWeight=0
-popupHeight=400
-popupWidth=560
+PreloadWeight=92
 
 [PlasmaViews][Panel 193]
 floating=0

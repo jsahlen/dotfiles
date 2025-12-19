@@ -61,7 +61,9 @@ gapsOuterBottom=8
 gapsOuterLeft=8
 gapsOuterRight=8
 gapsOuterTop=8
+noLayering=true
 presetWidths=33.3333%, 50%, 66.666667%, 75%, 100%
+tiledKeepBelow=false
 windowRules=[\n    {\n        "class": "(org\\\\.kde\\\\.)?plasmashell",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?polkit-kde-authentication-agent-1",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kded6",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kcalc",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kfind",\n        "tile": true\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?kruler",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?krunner",\n        "tile": false\n    },\n    {\n        "class": "(org\\\\.kde\\\\.)?yakuake",\n        "tile": false\n    },\n    {\n        "class": "steam",\n        "caption": "Steam Big Picture Mode",\n        "tile": false\n    },\n    {\n        "class": "zoom",\n        "caption": "Zoom Cloud Meetings|zoom|zoom <2>",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "splash",\n        "tile": false\n    },\n    {\n        "class": "jetbrains-.*",\n        "caption": "Unstash Changes|Paths Affected by stash@.*",\n        "tile": true\n    },\n    {\n        "class": "org.kde.plasma.emojier",\n        "tile": false\n    },\n    {\n        "class": "com.sznowicki.asdcontrol-gnome",\n        "tile": false\n    }\n]
 
 [TabBox]
@@ -76,7 +78,13 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][1a1b704c-ebef-4466-be93-bb63ccacb629][a9540ace-ad10-4af4-869f-ef7f47169ab1]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][76d3265c-69f0-42ce-9a49-56f0bd054d26][0bc600a9-5551-4ee0-b96d-45ca27c5a6e1]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][76d3265c-69f0-42ce-9a49-56f0bd054d26][a9540ace-ad10-4af4-869f-ef7f47169ab1]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][7766ea89-0b7f-47a1-8125-9730e412ab6c][0bc600a9-5551-4ee0-b96d-45ca27c5a6e1]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][7766ea89-0b7f-47a1-8125-9730e412ab6c][a9540ace-ad10-4af4-869f-ef7f47169ab1]
@@ -90,5 +98,6 @@ ElectricBorderTiling=false
 Scale=2
 
 [org.kde.kdecoration2]
+ButtonsOnLeft=M
 library=org.kde.klassy
 theme=Klassy
