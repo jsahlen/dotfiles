@@ -1,0 +1,314 @@
+// General
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+output "DP-4" {
+  scale 2.0
+}
+
+output "HDMI-A-1" {
+  mode "3840x2160@120.000"
+  scale 2.0
+  variable-refresh-rate on-demand=true
+
+  off
+}
+
+input {
+  keyboard {
+    xkb {
+      layout "us"
+      options "compose:ralt"
+    }
+  }
+  mouse {
+    natural-scroll
+  }
+}
+
+layout {
+  gaps 8
+
+  center-focused-column "on-overflow"
+
+  background-color "transparent"
+
+  preset-column-widths {
+    proportion 0.33333
+    proportion 0.5
+    proportion 0.66667
+  }
+
+  default-column-width { proportion 0.5; }
+
+  focus-ring {
+    off
+
+    width 2
+
+    active-color   "#c8cdd5"
+    inactive-color "#5c6370"
+    urgent-color   "#e06c75"
+  }
+
+  border {
+    width 2
+
+    active-color   "#c8cdd5"
+    inactive-color "#5c6370"
+    urgent-color   "#e06c75"
+  }
+
+  shadow {
+    on
+
+    softness 1
+    spread 0.5
+    offset x=0 y=0
+
+    color "#000"
+  }
+
+  tab-indicator {
+    active-color   "#c8cdd5"
+    inactive-color "#5c6370"
+    urgent-color   "#e06c75"
+  }
+
+  insert-hint {
+    color "#61afef80"
+  }
+}
+
+recent-windows {
+  highlight {
+    corner-radius 12
+
+    active-color "#c8cdd5"
+    urgent-color "#e06c75"
+  }
+}
+
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^quickshell$"
+  place-within-backdrop true
+}
+
+window-rule {
+  geometry-corner-radius 12
+  clip-to-geometry true
+  tiled-state true
+  draw-border-with-background false
+}
+
+window-rule {
+  match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+  open-floating true
+}
+
+window-rule {
+  match app-id=r#"firefox$"#
+  default-column-width { proportion 0.66667; }
+}
+
+window-rule {
+  match app-id="steam"
+  default-column-width { proportion 1.0; }
+}
+
+binds {
+  MOD+SHIFT+SLASH { show-hotkey-overlay; }
+
+  MOD+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+  MOD+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
+  MOD+SPACE hotkey-overlay-title="Run an Application: vicinae" { spawn-sh "dms ipc spotlight open"; }
+  SUPER+ALT+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+  XF86AUDIORAISEVOLUME allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+  XF86AUDIOLOWERVOLUME allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+  XF86AUDIOMUTE        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+  XF86AUDIOMICMUTE     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+  XF86AUDIOPLAY        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+  XF86AUDIOSTOP        allow-when-locked=true { spawn-sh "playerctl stop"; }
+  XF86AUDIOPREV        allow-when-locked=true { spawn-sh "playerctl previous"; }
+  XF86AUDIONEXT        allow-when-locked=true { spawn-sh "playerctl next"; }
+
+  XF86MONBRIGHTNESSUP   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+  XF86MONBRIGHTNESSDOWN allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+  MOD+O repeat=false { toggle-overview; }
+
+  MOD+Q repeat=false { close-window; }
+
+  MOD+LEFT  { focus-column-left; }
+  MOD+H     { focus-column-left; }
+  MOD+DOWN  { focus-window-down; }
+  MOD+J     { focus-window-down; }
+  MOD+UP    { focus-window-up; }
+  MOD+K     { focus-window-up; }
+  MOD+RIGHT { focus-column-right; }
+  MOD+L     { focus-column-right; }
+
+  MOD+CTRL+LEFT  { move-column-left; }
+  MOD+CTRL+H     { move-column-left; }
+  MOD+CTRL+DOWN  { move-window-down; }
+  MOD+CTRL+J     { move-window-down; }
+  MOD+CTRL+UP    { move-window-up; }
+  MOD+CTRL+K     { move-window-up; }
+  MOD+CTRL+RIGHT { move-column-right; }
+  MOD+CTRL+L     { move-column-right; }
+
+  MOD+HOME { focus-column-first; }
+  MOD+END  { focus-column-last; }
+  MOD+CTRL+HOME { move-column-to-first; }
+  MOD+CTRL+END  { move-column-to-last; }
+
+  MOD+SHIFT+LEFT  { focus-monitor-left; }
+  MOD+SHIFT+DOWN  { focus-monitor-down; }
+  MOD+SHIFT+UP    { focus-monitor-up; }
+  MOD+SHIFT+RIGHT { focus-monitor-right; }
+  MOD+SHIFT+H     { focus-monitor-left; }
+  MOD+SHIFT+J     { focus-monitor-down; }
+  MOD+SHIFT+K     { focus-monitor-up; }
+  MOD+SHIFT+L     { focus-monitor-right; }
+
+  MOD+SHIFT+CTRL+LEFT  { move-column-to-monitor-left; }
+  MOD+SHIFT+CTRL+DOWN  { move-column-to-monitor-down; }
+  MOD+SHIFT+CTRL+UP    { move-column-to-monitor-up; }
+  MOD+SHIFT+CTRL+RIGHT { move-column-to-monitor-right; }
+  MOD+SHIFT+CTRL+H     { move-column-to-monitor-left; }
+  MOD+SHIFT+CTRL+J     { move-column-to-monitor-down; }
+  MOD+SHIFT+CTRL+K     { move-column-to-monitor-up; }
+  MOD+SHIFT+CTRL+L     { move-column-to-monitor-right; }
+
+  MOD+PAGE_DOWN      { focus-workspace-down; }
+  MOD+PAGE_UP        { focus-workspace-up; }
+  MOD+U              { focus-workspace-down; }
+  MOD+I              { focus-workspace-up; }
+  MOD+CTRL+PAGE_DOWN { move-column-to-workspace-down; }
+  MOD+CTRL+PAGE_UP   { move-column-to-workspace-up; }
+  MOD+CTRL+U         { move-column-to-workspace-down; }
+  MOD+CTRL+I         { move-column-to-workspace-up; }
+
+  MOD+SHIFT+PAGE_DOWN { move-workspace-down; }
+  MOD+SHIFT+PAGE_UP   { move-workspace-up; }
+  MOD+SHIFT+U         { move-workspace-down; }
+  MOD+SHIFT+I         { move-workspace-up; }
+
+  MOD+WHEELSCROLLDOWN      cooldown-ms=150 { focus-workspace-down; }
+  MOD+WHEELSCROLLUP        cooldown-ms=150 { focus-workspace-up; }
+  MOD+CTRL+WHEELSCROLLDOWN cooldown-ms=150 { move-column-to-workspace-down; }
+  MOD+CTRL+WHEELSCROLLUP   cooldown-ms=150 { move-column-to-workspace-up; }
+
+  MOD+WHEELSCROLLRIGHT      { focus-column-right; }
+  MOD+WHEELSCROLLLEFT       { focus-column-left; }
+  MOD+CTRL+WHEELSCROLLRIGHT { move-column-right; }
+  MOD+CTRL+WHEELSCROLLLEFT  { move-column-left; }
+
+  MOD+SHIFT+WHEELSCROLLDOWN      { focus-column-right; }
+  MOD+SHIFT+WHEELSCROLLUP        { focus-column-left; }
+  MOD+CTRL+SHIFT+WHEELSCROLLDOWN { move-column-right; }
+  MOD+CTRL+SHIFT+WHEELSCROLLUP   { move-column-left; }
+
+  MOD+1 { focus-workspace 1; }
+  MOD+2 { focus-workspace 2; }
+  MOD+3 { focus-workspace 3; }
+  MOD+4 { focus-workspace 4; }
+  MOD+5 { focus-workspace 5; }
+  MOD+6 { focus-workspace 6; }
+  MOD+7 { focus-workspace 7; }
+  MOD+8 { focus-workspace 8; }
+  MOD+9 { focus-workspace 9; }
+  MOD+CTRL+1 { move-column-to-workspace 1; }
+  MOD+CTRL+2 { move-column-to-workspace 2; }
+  MOD+CTRL+3 { move-column-to-workspace 3; }
+  MOD+CTRL+4 { move-column-to-workspace 4; }
+  MOD+CTRL+5 { move-column-to-workspace 5; }
+  MOD+CTRL+6 { move-column-to-workspace 6; }
+  MOD+CTRL+7 { move-column-to-workspace 7; }
+  MOD+CTRL+8 { move-column-to-workspace 8; }
+  MOD+CTRL+9 { move-column-to-workspace 9; }
+
+  // Switches focus between the current and the previous workspace.
+  // MOD+TAB { focus-workspace-previous; }
+
+  // The following binds move the focused window in and out of a column.
+  // If the window is alone, they will consume it into the nearby column to the side.
+  // If the window is already in a column, they will expel it out.
+  MOD+BRACKETLEFT  { consume-or-expel-window-left; }
+  MOD+BRACKETRIGHT { consume-or-expel-window-right; }
+
+  // Consume one window from the right to the bottom of the focused column.
+  MOD+COMMA  { consume-window-into-column; }
+  // Expel the bottom window from the focused column to the right.
+  MOD+PERIOD { expel-window-from-column; }
+
+  MOD+R { switch-preset-column-width; }
+  // Cycling through the presets in reverse order is also possible.
+  MOD+SHIFT+R { switch-preset-column-width-back; }
+  // Mod+Shift+R { switch-preset-window-height; }
+  MOD+CTRL+R { reset-window-height; }
+  MOD+F { maximize-column; }
+  MOD+SHIFT+F { fullscreen-window; }
+
+  // Expand the focused column to space not taken up by other fully visible columns.
+  // Makes the column "fill the rest of the space".
+  MOD+CTRL+F { expand-column-to-available-width; }
+
+  MOD+C { center-column; }
+
+  // Center all fully visible columns on screen.
+  MOD+CTRL+C { center-visible-columns; }
+
+  // Finer width adjustments.
+  // This command can also:
+  // * set width in pixels: "1000"
+  // * adjust width in pixels: "-5" or "+5"
+  // * set width as a percentage of screen width: "25%"
+  // * adjust width as a percentage of screen width: "-10%" or "+10%"
+  // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
+  // set-column-width "100" will make the column occupy 200 physical screen pixels.
+  MOD+MINUS { set-column-width "-10%"; }
+  MOD+EQUAL { set-column-width "+10%"; }
+
+  // Finer height adjustments when in column with other windows.
+  MOD+SHIFT+MINUS { set-window-height "-10%"; }
+  MOD+SHIFT+EQUAL { set-window-height "+10%"; }
+
+  // Move the focused window between the floating and the tiling layout.
+  MOD+V       { toggle-window-floating; }
+  MOD+SHIFT+V { switch-focus-between-floating-and-tiling; }
+
+  // Toggle tabbed column display mode.
+  // Windows in this column will appear as vertical tabs,
+  // rather than stacked on top of each other.
+  MOD+W { toggle-column-tabbed-display; }
+
+  PRINT { screenshot; }
+  CTRL+PRINT { screenshot-screen; }
+  ALT+PRINT { screenshot-window; }
+
+  // Applications such as remote-desktop clients and software KVM switches may
+  // request that niri stops processing the keyboard shortcuts defined here
+  // so they may, for example, forward the key presses as-is to a remote machine.
+  // It's a good idea to bind an escape hatch to toggle the inhibitor,
+  // so a buggy application can't hold your session hostage.
+  //
+  // The allow-inhibiting=false property can be applied to other binds as well,
+  // which ensures niri always processes them, even when an inhibitor is active.
+  MOD+ESCAPE allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+  // The quit action will show a confirmation dialog to avoid accidental exits.
+  MOD+SHIFT+E { quit; }
+  CTRL+ALT+DELETE { quit; }
+
+  // Powers off the monitors. To turn them back on, do any input like
+  // moving the mouse or pressing any other key.
+  MOD+SHIFT+P { power-off-monitors; }
+}

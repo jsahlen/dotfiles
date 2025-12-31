@@ -1,0 +1,24 @@
+{
+  "dark": {
+    "name": "OneDark Pro",
+    "primary": "#8fc6f4",
+    "primaryText": "#282c34",
+    "primaryContainer": "#528bff",
+    "secondary": "#c678dd",
+    "surface": "#282c34",
+    "surfaceText": "#abb2bf",
+    "surfaceVariant": "#2c323c",
+    "surfaceVariantText": "#abb2bf",
+    "surfaceTint": "#61afef",
+    "background": "#21252b",
+    "backgroundText": "#abb2bf",
+    "outline": "#3e4451",
+    "surfaceContainer": "#282c34",
+    "surfaceContainerHigh": "#2c323c",
+    "surfaceContainerHighest": "#3e4451",
+    "error": "#e06c75",
+    "warning": "#e5c07b",
+    "info": "#56b6c2",
+    "matugen_type": "scheme-tonal-spot"
+  }
+}
