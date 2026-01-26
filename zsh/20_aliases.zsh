@@ -65,9 +65,9 @@ fi
 
 # eza > ls
 if hash eza &>/dev/null; then
-  alias ls="eza -a --color=always --group-directories-first --icons=always"  # preferred listing
-  alias ll="eza -al --color=always --group-directories-first --icons=always" # long format
-  alias lt="eza -aT --color=always --group-directories-first --icons=always --ignore-glob='.git'" # tree listing
-  alias l.="eza -a | grep -e '^\.'"                                          # show only dotfiles
+  alias ls="eza --color=always --group-directories-first --icons=always"    # preferred listing
+  alias ll="eza -l --color=always --group-directories-first --icons=always" # long format
+  alias lt="eza -T --color=always --group-directories-first --icons=always --ignore-glob='.git'" # tree listing
+  alias l.="eza -a | grep -e '^\.'"                                         # show only dotfiles
   alias tree=lt
 fi
