@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.g.mapleader = ","
+vim.g.root_spec = { "cwd" }
 
 local opt = vim.opt
 
