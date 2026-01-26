@@ -1,35 +1,54 @@
+// Startup
+// spawn-at-startup "bash" "-c" "wl-paste --watch bash -c 'wl-paste --list-types | grep -q x-kde-passwordManagerHint || wl-paste | cliphist store'"
+spawn-at-startup "~/.cargo/bin/wl-gammarelay-rs"
+spawn-at-startup "sleep 1 && /usr/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Gamma d 0.95"
+
 // General
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-output "DP-4" {
-  scale 2.0
+hotkey-overlay {
+  skip-at-startup
 }
 
-output "HDMI-A-1" {
-  mode "3840x2160@120.000"
-  scale 2.0
-  variable-refresh-rate on-demand=true
+environment {
+  XDG_CURRENT_DESKTOP "niri"
+  QT_QPA_PLATFORM "wayland"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+  QT_QPA_PLATFORMTHEME "gtk3"
+  QT_QPA_PLATFORMTHEME_QT6 "gtk3"
+  TERMINAL "ghostty"
+}
 
-  off
+// Enable focusing on newly-opened links in browser, or when clicking tray icon
+debug {
+  honor-xdg-activation-with-invalid-serial
 }
 
 input {
   keyboard {
     xkb {
       layout "us"
-      options "compose:ralt"
+      options "compose:ralt,ctrl:nocaps"
     }
   }
   mouse {
     natural-scroll
+  }
+  touchpad {
+    natural-scroll
+    scroll-factor 0.3
+    tap
+    dwt
   }
 }
 
 layout {
   gaps 8
 
+  empty-workspace-above-first
+
   center-focused-column "on-overflow"
+  always-center-single-column
 
   background-color "transparent"
 
@@ -90,13 +109,36 @@ recent-windows {
 }
 
 layer-rule {
-    match namespace="dms:blurwallpaper"
-    place-within-backdrop true
+  match namespace="^quickshell$"
+  place-within-backdrop false
 }
 
 layer-rule {
-  match namespace="^quickshell$"
-  place-within-backdrop true
+  match namespace="dms:bar"
+  shadow {
+    on
+    draw-behind-window true
+    softness 0
+    spread 0
+    offset x=0 y=0
+    color "#000b"
+  }
+}
+
+window-rule {
+  match is-floating=true
+
+  shadow {
+    softness 30
+    spread 2
+    offset x=0 y=3
+  }
+}
+
+window-rule {
+  match is-active=false is-floating=true
+
+  opacity 0.8
 }
 
 window-rule {
@@ -117,17 +159,61 @@ window-rule {
 }
 
 window-rule {
+  match app-id=r#"^vivaldi"#
+  default-column-width { proportion 0.66667; }
+}
+
+window-rule {
+  match app-id="zen"
+  default-column-width { proportion 0.66667; }
+}
+
+window-rule {
   match app-id="steam"
   default-column-width { proportion 1.0; }
+}
+
+window-rule {
+  match app-id=r#"ghostty$"#
+  default-column-width { proportion 0.5; }
+}
+
+window-rule {
+  match app-id=r#"ghostty-float$"#
+  open-floating true
+  default-column-width { proportion 0.4; }
+  default-window-height { proportion 0.5; }
+}
+
+window-rule {
+  match app-id="org.gnome.Calendar" title="Calendar"
+  default-column-width { proportion 1.0; }
+}
+
+window-rule {
+  match title=r#"^wl-gammarelay-rs$"#
+  open-floating true
+}
+
+window-rule {
+  match app-id=r#"quickshell$"#
+  match app-id=r#"librepods$"#
+  open-floating true
+}
+
+window-rule {
+  match app-id="org.gnome.NautilusPreviewer"
+  open-floating true
 }
 
 binds {
   MOD+SHIFT+SLASH { show-hotkey-overlay; }
 
-  MOD+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+  MOD+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty" "+new-window"; }
+  MOD+SHIFT+T hotkey-overlay-title="Open a floating Terminal: ghostty" { spawn "ghostty" "--class=com.mitchellh.ghostty-float"; }
   MOD+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
-  MOD+SPACE hotkey-overlay-title="Run an Application: vicinae" { spawn-sh "dms ipc spotlight open"; }
-  SUPER+ALT+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+  MOD+E hotkey-overlay-title="Open a File Explorer: nautilus" { spawn "nautilus"; }
+  MOD+SPACE hotkey-overlay-title="Run an Application: vicinae" { spawn-sh "/usr/local/bin/vicinae open"; }
 
   XF86AUDIORAISEVOLUME allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
   XF86AUDIOLOWERVOLUME allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -256,6 +342,7 @@ binds {
   MOD+CTRL+R { reset-window-height; }
   MOD+F { maximize-column; }
   MOD+SHIFT+F { fullscreen-window; }
+  MOD+CTRL+SHIFT+F { toggle-windowed-fullscreen; }
 
   // Expand the focused column to space not taken up by other fully visible columns.
   // Makes the column "fill the rest of the space".
@@ -282,8 +369,8 @@ binds {
   MOD+SHIFT+EQUAL { set-window-height "+10%"; }
 
   // Move the focused window between the floating and the tiling layout.
-  MOD+V       { toggle-window-floating; }
-  MOD+SHIFT+V { switch-focus-between-floating-and-tiling; }
+  MOD+X       { toggle-window-floating; }
+  MOD+SHIFT+X { switch-focus-between-floating-and-tiling; }
 
   // Toggle tabbed column display mode.
   // Windows in this column will appear as vertical tabs,
@@ -312,3 +399,13 @@ binds {
   // moving the mouse or pressing any other key.
   MOD+SHIFT+P { power-off-monitors; }
 }
+
+include "dms/alttab.kdl"
+include "dms/binds.kdl"
+include "dms/colors.kdl"
+// include "dms/layout.kdl"
+include "dms/wpblur.kdl"
+
+include "dms/cursor.kdl"
+
+include "dms/outputs.kdl"
