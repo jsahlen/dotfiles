@@ -2,6 +2,7 @@
 theme = onedarkpro
 
 # Typography
+font-family = ""
 font-family = MonoLisa
 font-style-bold = Bold
 font-size = 15
