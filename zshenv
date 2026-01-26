@@ -4,12 +4,6 @@ setopt no_global_rcs
 # Terminfo path
 export TERMINFO="$HOME/.terminfo"
 
-# Language
-export LANGUAGE="en_US.UTF-8"
-export LANG="${LANGUAGE}"
-export LC_ALL="${LANGUAGE}"
-export LC_CTYPE="${LANGUAGE}"
-
 # Editor
 export EDITOR="vim"
 
