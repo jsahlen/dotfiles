@@ -17,6 +17,7 @@ if [ -z $ZSH_PATH_SET ]; then
 
   PATH="$PATH:$HOME/.zplug/bin" # zplug bin directory
   PATH="$PATH:$HOME/.local/bin" # user bin directory
+  PATH="$PATH:$HOME/.cargo/bin" # cargo bin directory
   export PATH
 fi
 
