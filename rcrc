@@ -1,3 +1,3 @@
 COPY_ALWAYS="rcrc"
 EXCLUDES="rcrc README.md terminfo Brewfile"
-SYMLINK_DIRS="zsh config/nvim config/bat"
+SYMLINK_DIRS="zsh config/nvim config/bat config/yazi config/zed config/niri"
