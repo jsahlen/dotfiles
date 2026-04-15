@@ -10,3 +10,5 @@
 *.un~
 .vscode
 .tool-versions
+.zed
+.claude
