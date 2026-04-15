@@ -13,6 +13,9 @@ return {
     "olimorris/onedarkpro.nvim",
     priority = 1000,
     opts = {
+      options = {
+        transparency = true,
+      },
       highlights = {
         Comment = { italic = true },
         -- NormalFloat = { bg = "NONE" },
