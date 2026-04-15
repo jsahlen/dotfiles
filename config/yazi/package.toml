@@ -1,0 +1,24 @@
+[[plugin.deps]]
+use = "Joao-Queiroga/drag"
+rev = "2760668"
+hash = "3360123b833e8ce6a5b64a46f1a3ceb9"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "88990a6"
+hash = "3996fc74044bc44144b323686f887e1"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "eca1861"
+hash = "e519d894e94ded741e06aae4d4775981"
+
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "8ab04b2"
+hash = "bdd196f71aa3e6aa02d1b1d6cad22424"
+
+[[flavor.deps]]
+use = "damjee/onedark"
+rev = "8a7796c"
+hash = "e7d277fd8cec72b6fa26586b6d51f597"

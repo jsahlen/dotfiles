@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on   = [ "<C-d>" ]
+run  = "plugin drag"
+desc = "Drag Files"

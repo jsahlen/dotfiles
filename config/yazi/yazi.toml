@@ -1,0 +1,29 @@
+[[opener.dms-set-wallpaper]]
+run = "dms ipc wallpaper set %s1"
+for = "linux"
+desc = "Set as wallpaper (DMS)"
+
+[[opener.noctalia-set-wallpaper]]
+run = "qs -c noctalia-shell ipc call wallpaper set %s1"
+for = "linux"
+desc = "Set as wallpaper (Noctalia)"
+
+[[open.prepend_rules]]
+mime = "image/*"
+use  = [ "noctalia-set-wallpaper", "open" ]
+
+[plugin]
+  prepend_preloaders = [
+    # Replace magick, image, video with mediainfo
+    { mime = "{audio,video,image}/*", run = "mediainfo" },
+    { mime = "application/subrip", run = "mediainfo" },
+    # Adobe Illustrator, Adobe Photoshop is image/adobe.photoshop, already handled above
+    { mime = "application/postscript", run = "mediainfo" },
+  ]
+  prepend_previewers = [
+    # Replace magick, image, video with mediainfo
+    { mime = "{audio,video,image}/*", run = "mediainfo"},
+    { mime = "application/subrip", run = "mediainfo" },
+    # Adobe Illustrator, Adobe Photoshop is image/adobe.photoshop, already handled above
+    { mime = "application/postscript", run = "mediainfo" },
+  ]
