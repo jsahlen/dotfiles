@@ -1,0 +1,122 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "ssh_connections": [
+    {
+      "host": "ct-downloads",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/docker"],
+        },
+      ],
+    },
+    {
+      "host": "ct-media",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/docker/./"],
+        },
+      ],
+    },
+  ],
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+    "opencode": {
+      "type": "registry",
+    },
+  },
+  "auto_install_extensions": {
+    "color-highlight": true,
+    "editorconfig": true,
+    "git-firefly": true,
+    "html": true,
+    "kdl": true,
+    "lua": true,
+    "material-icon-theme": true,
+    "ruby": true,
+    "scss": true,
+    "stylelint": true,
+    "xml": true,
+  },
+  "show_whitespaces": "selection",
+  "tab_size": 2,
+  "vim": {
+    "use_system_clipboard": "on_yank",
+  },
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": true,
+    "show": true,
+  },
+  "file_finder": {
+    "modal_max_width": "large",
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+    },
+  },
+  "active_pane_modifiers": {
+    "border_size": 0.0,
+  },
+  "window_decorations": "server",
+  "tabs": {
+    "git_status": true,
+    "file_icons": true,
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_user_picture": false,
+    "show_branch_icon": false,
+  },
+  "project_panel": {
+    "hide_hidden": false,
+    "sort_mode": "directories_first",
+    "indent_guides": {
+      "show": "always",
+    },
+    "auto_fold_dirs": true,
+    "git_status": true,
+    "folder_icons": true,
+    "hide_root": false,
+    "hide_gitignore": false,
+    "default_width": 240.0,
+  },
+  "ui_font_family": "Inter",
+  "buffer_font_family": "MonoLisa Nerd Font",
+  "buffer_font_fallbacks": ["Apple Color Emoji", "Noto Color Emoji"],
+  "buffer_font_size": 15,
+  "buffer_line_height": "comfortable",
+  "icon_theme": "Material Icon Theme",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "vim_mode": true,
+  "terminal": {
+    "font_family": "MonoLisa Nerd Font",
+    "font_fallbacks": ["Apple Color Emoji", "Noto Color Emoji"],
+    "font_size": 15,
+    "line_height": "comfortable",
+  },
+  "indent_guides": {
+    "enabled": true,
+  },
+  "theme": "One Dark Pro",
+  "file_types": {
+    "Git Commit": ["COMMIT_EDITMSG.*"],
+  },
+}

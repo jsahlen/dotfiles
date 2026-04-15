@@ -1,0 +1,9 @@
+[
+  {
+    "label": "LazyGit",
+    "command": "ghostty --class=com.mitchellh.ghostty --working-directory=$ZED_WORKTREE_ROOT -e lazygit",
+    "reveal": "never",
+    "hide": "always",
+    "shell": "system",
+  },
+]
