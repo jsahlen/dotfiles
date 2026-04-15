@@ -1,0 +1,18 @@
+input {
+  keyboard {
+    xkb {
+      layout "us"
+      options "compose:ralt,ctrl:nocaps"
+    }
+  }
+  mouse {
+    natural-scroll
+  }
+  touchpad {
+    natural-scroll
+    scroll-factor 0.3
+    tap
+    dwt
+  }
+}
+

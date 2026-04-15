@@ -1,0 +1,66 @@
+layout {
+  gaps 8
+
+  empty-workspace-above-first
+
+  center-focused-column "on-overflow"
+  always-center-single-column
+
+  background-color "transparent"
+
+  preset-column-widths {
+    proportion 0.33333
+    proportion 0.5
+    proportion 0.66667
+  }
+
+  default-column-width { proportion 0.5; }
+
+  focus-ring {
+    off
+
+    width 2
+
+    active-color   "#c8cdd5"
+    inactive-color "#5c6370"
+    urgent-color   "#e06c75"
+  }
+
+  border {
+    width 2
+
+    active-color   "#c8cdd5"
+    inactive-color "#5c6370"
+    urgent-color   "#e06c75"
+  }
+
+  shadow {
+    on
+
+    softness 1
+    spread 0.5
+    offset x=0 y=0
+
+    color "#000"
+  }
+
+  tab-indicator {
+    active-color   "#c8cdd5"
+    inactive-color "#5c6370"
+    urgent-color   "#e06c75"
+  }
+
+  insert-hint {
+    color "#61afef80"
+  }
+}
+
+recent-windows {
+  highlight {
+    corner-radius 12
+
+    active-color "#c8cdd5"
+    urgent-color "#e06c75"
+  }
+}
+

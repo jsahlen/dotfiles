@@ -1,0 +1,8 @@
+binds {
+  // Noctalia binds
+  SUPER+SPACE { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+  SUPER+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+  SUPER+CTRL+Q allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+  SUPER+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+  CTRL+ALT+DELETE { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+}

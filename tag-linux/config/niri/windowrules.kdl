@@ -1,0 +1,125 @@
+window-rule {
+  match is-floating=true
+
+  focus-ring {
+    on
+
+    width 0.5
+    active-color "#00000080"
+    inactive-color "#00000080"
+  }
+
+  shadow {
+    softness 30
+    spread 2
+    offset x=0 y=3
+  }
+}
+
+window-rule {
+  match is-active=false is-floating=true
+
+  opacity 0.8
+}
+
+window-rule {
+  geometry-corner-radius 12
+  clip-to-geometry true
+  tiled-state true
+  draw-border-with-background false
+}
+
+window-rule {
+  match app-id="com.slack.Slack"
+  match app-id="FFPWA-01KE70S4PZD9A99B13QCZYF481" // Notion ffpwa
+  open-on-workspace "admin"
+}
+
+window-rule {
+  match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+  open-floating true
+}
+
+window-rule {
+  match app-id=r#"firefox$"#
+  default-column-width { proportion 0.66667; }
+  open-on-workspace "browser"
+}
+
+window-rule {
+  match app-id=r#"^vivaldi"#
+  default-column-width { proportion 0.66667; }
+}
+
+window-rule {
+  match app-id="zen"
+  default-column-width { proportion 0.66667; }
+  open-on-workspace "browser"
+}
+
+window-rule {
+  match app-id="Cider"
+  default-column-width { proportion 0.66667; }
+}
+
+window-rule {
+  match app-id="steam"
+  default-column-width { proportion 1.0; }
+}
+
+window-rule {
+  match app-id=r#"ghostty$"#
+  default-column-width { proportion 0.5; }
+}
+
+window-rule {
+  match app-id=r#"ghostty-float$"#
+  open-floating true
+  default-column-width { fixed 1024; }
+  default-window-height { fixed 762; }
+}
+
+window-rule {
+  match app-id="org.gnome.Calendar" title="Calendar"
+  default-column-width { proportion 1.0; }
+}
+
+window-rule {
+  match app-id="evolution-alarm-notify"
+  open-floating true
+}
+
+window-rule {
+  match title=r#"^wl-gammarelay-rs$"#
+  open-floating true
+}
+
+window-rule {
+  match app-id=r#"quickshell$"#
+  match app-id=r#"librepods$"#
+  match app-id="gcolor3"
+  open-floating true
+}
+
+window-rule {
+  match app-id="org.gnome.Calculator"
+  open-floating true
+  default-column-width { fixed 1; }
+  default-window-height { fixed 1; }
+}
+
+window-rule {
+  match app-id="org.gnome.NautilusPreviewer"
+  open-floating true
+}
+
+window-rule {
+  match app-id="dev.zed.Zed"
+  default-column-width { proportion 1.0; }
+}
+
+window-rule {
+  match app-id="dev.zed.Zed" title=r#"Settings$"#
+  open-floating true
+}
+
