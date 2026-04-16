@@ -1,11 +1,10 @@
 #!/bin/sh
 set -e
 
-tmp=$(mktemp /tmp/COMMIT_EDITMSG.XXXXXX)
+tmp=$(mktemp "/tmp/$(basename "$1").XXXXXX")
 cp "$1" "$tmp"
 
 zed --wait "$tmp"
 
 cp "$tmp" "$1"
 rm "$tmp"
-

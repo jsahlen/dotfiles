@@ -117,6 +117,7 @@
   },
   "theme": "One Dark Pro",
   "file_types": {
-    "Git Commit": ["COMMIT_EDITMSG.*"],
+    "Git Commit": ["/tmp/COMMIT_EDITMSG.*"],
+    "Git Rebase": ["/tmp/git-rebase-todo.*"],
   },
 }
