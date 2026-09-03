@@ -2,10 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.g.mapleader = ","
+--vim.g.mapleader = ","
 vim.g.root_spec = { "cwd" }
 
-local opt = vim.opt
-
-opt.relativenumber = false
-opt.clipboard = "" -- don't use system clipboard
+vim.opt.relativenumber = false
+vim.opt.clipboard = "" -- don't use system clipboard
