@@ -4,7 +4,7 @@ set -e
 tmp=$(mktemp "/tmp/$(basename "$1").XXXXXX")
 cp "$1" "$tmp"
 
-zed --wait "$tmp"
+zed --wait --add "$tmp"
 
 cp "$tmp" "$1"
 rm "$tmp"
